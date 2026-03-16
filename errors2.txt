@@ -1,0 +1,7 @@
+﻿src/components/ReportSidebar.tsx(3,23): error TS1484: 'CandidateReport' is a type and must be imported using a type-only import when 'verbatimModuleSyntax' is enabled.
+src/components/ReportSidebar.tsx(16,33): error TS2339: Property 'incrementReport' does not exist on type 'AppStateContextType'.
+src/components/ReportSidebar.tsx(16,33): error TS6133: 'incrementReport' is declared but its value is never read.
+src/pages/History.tsx(2,23): error TS1484: 'CandidateReport' is a type and must be imported using a type-only import when 'verbatimModuleSyntax' is enabled.
+src/pages/Scanner.tsx(5,23): error TS1484: 'CandidateReport' is a type and must be imported using a type-only import when 'verbatimModuleSyntax' is enabled.
+src/pages/Scanner.tsx(5,40): error TS1484: 'CandidateScore' is a type and must be imported using a type-only import when 'verbatimModuleSyntax' is enabled.
+src/pages/Scanner.tsx(237,67): error TS2304: Cannot find name 'CheckCircle'.
