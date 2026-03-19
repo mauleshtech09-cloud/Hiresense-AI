@@ -68,7 +68,7 @@ const ReportSidebar: React.FC<ReportSidebarProps> = ({ isOpen, onClose, report, 
                     >
                         <div className="p-6">
                             <div className="flex justify-between items-center mb-6">
-                                <h2 className="text-2xl font-bold text-gray-900">Candidate Report</h2>
+                                <h2 className="text-2xl font-bold text-gray-900">Resume Scan Report</h2>
                                 <button onClick={onClose} className="p-2 bg-gray-100 rounded-full hover:bg-gray-200 transition-colors">
                                     <X className="w-5 h-5 text-gray-600" />
                                 </button>
@@ -155,14 +155,14 @@ const ReportSidebar: React.FC<ReportSidebarProps> = ({ isOpen, onClose, report, 
                                 </div>
 
                                 <div>
-                                    <h4 className="text-sm font-semibold text-gray-500 uppercase tracking-wider mb-2">Final Role Suitability</h4>
+                                    <h4 className="text-sm font-semibold text-gray-500 uppercase tracking-wider mb-2">Final Conclusion</h4>
                                     <div className="bg-indigo-50 p-4 rounded-lg border border-indigo-200 text-sm font-bold text-indigo-900 border-l-4 border-l-indigo-600 flex flex-col gap-2">
-                                        <span>Verdict: {report.recommendation}</span>
+                                        <span>Assessment: {report.recommendation}</span>
                                         <span className="font-normal text-indigo-700">{report.roleSuitability}</span>
                                     </div>
                                 </div>
 
-                                {/* Extra Feature: AI Interview Qs */}
+                                {/* Extra Feature: Interview Qs */}
                                 <div className="pt-4 border-t border-gray-200">
                                     <button
                                         onClick={() => setShowQuestions(!showQuestions)}
@@ -170,7 +170,7 @@ const ReportSidebar: React.FC<ReportSidebarProps> = ({ isOpen, onClose, report, 
                                     >
                                         <span className="flex items-center gap-2">
                                             <MessageSquare className="w-4 h-4" />
-                                            AI Interview Question Generator
+                                            Suggested Interview Questions
                                         </span>
                                         <ArrowRight className={`w-4 h-4 transition-transform ${showQuestions ? 'rotate-90' : ''}`} />
                                     </button>

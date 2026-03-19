@@ -208,7 +208,7 @@ const Profile: React.FC = () => {
                                 <div>
                                     <p className="text-sm font-bold text-gray-900">Current Plan Options</p>
                                     <p className="text-xs text-gray-600 mt-1">
-                                        {org.plan === 'Basic' ? 'Limited filters unlocked.' : 'All advanced AI filters activated.'}
+                                        {org.plan === 'Basic' ? 'Limited filters unlocked.' : 'All advanced scanner filters activated.'}
                                     </p>
                                 </div>
                             </div>

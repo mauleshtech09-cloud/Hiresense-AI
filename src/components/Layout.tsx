@@ -1,15 +1,8 @@
 import React from 'react';
-import { Outlet, Navigate } from 'react-router-dom';
-import { useAuth } from '../context/AuthContext';
+import { Outlet } from 'react-router-dom';
 import Navbar from './Navbar';
 
 const Layout: React.FC = () => {
-    const { org } = useAuth();
-
-    if (!org) {
-        return <Navigate to="/login" replace />;
-    }
-
     return (
         <div className="min-h-[100vh] flex flex-col bg-[var(--color-secondary-50)]">
             <Navbar />

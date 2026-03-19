@@ -64,8 +64,8 @@ export const DOMAIN_FRAMEWORKS: Record<string, DomainFramework> = {
         education: ['Computer Science', 'Data Engineering'],
         certifications: ['AWS Certified Database']
     },
-    'Data Science / AI': {
-        name: 'Data Science / AI',
+    'Data Science': {
+        name: 'Data Science',
         roles: ['Data Scientist', 'Machine Learning Engineer', 'AI Engineer'],
         requiredSkills: ['Python', 'Machine Learning', 'Statistics', 'Deep Learning', 'TensorFlow', 'PyTorch', 'Scikit-learn'],
         supportingSkills: ['SQL', 'Data Visualization', 'NLP'],

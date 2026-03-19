@@ -267,7 +267,7 @@ const Scanner: React.FC = () => {
                             disabled={!file || isAnalyzing}
                             className="mt-6 w-full flex justify-center items-center py-3 px-4 border border-transparent rounded-xl shadow-md text-sm font-bold text-white bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700 disabled:opacity-50 transition-all"
                         >
-                            {isAnalyzing ? 'Processing AI...' : 'Analyze Resume'}
+                            {isAnalyzing ? 'Processing...' : 'Analyze Resume'}
                             <Zap className="ml-2 w-5 h-5" />
                         </button>
                     </div>
@@ -279,7 +279,7 @@ const Scanner: React.FC = () => {
                         <div className="h-full bg-white p-8 rounded-2xl shadow-sm border border-gray-100 flex flex-col items-center justify-center text-center min-h-[400px]">
                             <Search className="w-16 h-16 text-indigo-100 mb-4" />
                             <h3 className="text-lg font-bold text-gray-900 mb-2">Ready to Scan</h3>
-                            <p className="text-gray-500 max-w-sm">Upload a resume and set your job filters to let AI analyze the candidate's fit.</p>
+                            <p className="text-gray-500 max-w-sm">Upload a resume and set your job filters to let our scanner analyze the candidate's fit.</p>
                         </div>
                     )}
 

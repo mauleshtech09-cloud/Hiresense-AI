@@ -26,9 +26,9 @@ const Home: React.FC = () => {
                         transition={{ duration: 0.6 }}
                         className="text-4xl md:text-6xl font-extrabold text-gray-900 tracking-tight mb-6"
                     >
-                        AI Resume Screening & <br className="hidden md:block" />
+                        Automated Resume <br className="hidden md:block" />
                         <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-purple-600">
-                            Candidate Matching Platform
+                            Scanning & Matching
                         </span>
                     </motion.h1>
                     <motion.p
@@ -37,7 +37,7 @@ const Home: React.FC = () => {
                         transition={{ duration: 0.6, delay: 0.1 }}
                         className="mt-4 max-w-2xl mx-auto text-xl text-gray-600 mb-8"
                     >
-                        Automate resume analysis and identify the best candidates instantly using AI.
+                        Streamline your recruitment process and identify the best candidates instantly with our smart scanner.
                     </motion.p>
 
                     {/* NEW PLAN INDICATOR */}
@@ -122,7 +122,7 @@ const Home: React.FC = () => {
                     {[
                         { step: '01', title: 'Upload Resume', desc: 'Securely upload candidate resumes in PDF format.', icon: Upload },
                         { step: '02', title: 'Apply Job Filters', desc: 'Define your role, skills, and experience requirements.', icon: Search },
-                        { step: '03', title: 'AI Evaluation', desc: 'Get instant structured reports and candidate scores.', icon: FileText }
+                        { step: '03', title: 'Smart Matching', desc: 'Get instant structured reports and candidate scores.', icon: FileText }
                     ].map((item, i) => (
                         <div key={i} className="flex flex-col items-center text-center relative z-10 bg-white group">
                             <div className="w-24 h-24 rounded-full bg-indigo-50 border-8 border-white flex items-center justify-center mb-6 text-indigo-600 shadow-sm group-hover:scale-110 transition-transform">
@@ -136,18 +136,17 @@ const Home: React.FC = () => {
                 </div>
             </section>
 
-            {/* AI SOLUTION SECTION */}
             <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="text-center mb-16">
-                    <h2 className="text-3xl font-bold text-gray-900">The AI Advantage</h2>
+                    <h2 className="text-3xl font-bold text-gray-900">The Hiring Advantage</h2>
                 </div>
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                     {[
-                        { title: 'AI Resume Parsing', icon: FileSearch },
+                        { title: 'Resume Parsing', icon: FileSearch },
                         { title: 'Candidate Skill Matching', icon: Target },
                         { title: 'Skill Gap Detection', icon: Zap },
                         { title: 'Automated Candidate Ranking', icon: BarChart },
-                        { title: 'Hiring Recommendation Engine', icon: ShieldCheck },
+                        { title: 'Recommendation Engine', icon: ShieldCheck },
                         { title: 'Structured Candidate Reports', icon: FileText }
                     ].map((feature, i) => (
                         <motion.div
@@ -182,10 +181,9 @@ const Home: React.FC = () => {
                 </div>
             </section>
 
-            {/* PRODUCT COMPARISON */}
             <section className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
                 <div className="text-center mb-12">
-                    <h2 className="text-3xl font-bold text-gray-900">Why HireSense AI?</h2>
+                    <h2 className="text-3xl font-bold text-gray-900">Why HireSense?</h2>
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                     <div className="bg-white rounded-2xl p-8 border border-gray-200 shadow-sm">
@@ -206,10 +204,10 @@ const Home: React.FC = () => {
                         <div className="absolute top-0 right-0 w-32 h-32 bg-indigo-500 opacity-5 rounded-bl-[100px]" />
                         <h3 className="text-xl font-bold text-indigo-900 mb-6 flex items-center gap-3 relative z-10">
                             <span className="w-8 h-8 rounded-full bg-indigo-600 flex items-center justify-center text-white text-sm">✓</span>
-                            HireSense AI
+                            HireSense
                         </h3>
                         <ul className="space-y-4 relative z-10">
-                            {['AI-driven evaluation', 'Candidate ranking system', 'Skill gap analysis', 'Detailed hiring insights'].map((item, i) => (
+                            {['Smart-driven evaluation', 'Candidate ranking system', 'Skill gap analysis', 'Detailed hiring insights'].map((item, i) => (
                                 <li key={i} className="flex items-start text-indigo-900 font-medium">
                                     <CheckCircle className="w-5 h-5 text-indigo-500 mr-3 shrink-0 mt-0.5" />
                                     {item}

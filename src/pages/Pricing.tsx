@@ -1,18 +1,21 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useAuth } from '../context/AuthContext';
 import { Check, X } from 'lucide-react';
 import { motion } from 'framer-motion';
+import PaymentModal from '../components/PaymentModal';
 
 const Pricing: React.FC = () => {
     const { org } = useAuth();
+    const [isPaymentModalOpen, setIsPaymentModalOpen] = useState(false);
+    const [selectedPlan, setSelectedPlan] = useState<{ name: string; price: string } | null>(null);
 
     const plans = [
         {
             name: 'Basic',
             price: '₹100',
-            description: 'Perfect for small teams starting with AI hiring.',
+            description: 'Perfect for small teams starting with smart hiring.',
             features: ['3 Scans per day', '1 Detailed report', 'Basic Job Filters', 'Standard support'],
-            notIncluded: ['Candidate Ranking', 'AI Interview Questions', 'Priority Processing'],
+            notIncluded: ['Candidate Ranking', 'Interview Questions', 'Priority Processing'],
             highlight: false
         },
         {
@@ -34,18 +37,23 @@ const Pricing: React.FC = () => {
         {
             name: 'Master',
             price: '₹5000',
-            description: 'Unlimited AI power for enterprise organizations.',
-            features: ['500 Scans per day', 'Unlimited Reports', 'All Filters Unlocked', 'Candidate Ranking', 'AI Interview Questions', 'Priority Processing (Fastest)'],
+            description: 'Full scanner power for enterprise organizations.',
+            features: ['500 Scans per day', 'Unlimited Reports', 'All Filters Unlocked', 'Candidate Ranking', 'Interview Questions', 'Priority Processing (Fastest)'],
             notIncluded: [],
             highlight: false
         }
     ];
 
+    const handleSelectPlan = (plan: { name: string; price: string }) => {
+        setSelectedPlan(plan);
+        setIsPaymentModalOpen(true);
+    };
+
     return (
         <div className="pb-16 pt-8">
             <div className="text-center max-w-3xl mx-auto mb-16">
                 <h1 className="text-4xl font-extrabold text-gray-900 tracking-tight mb-4">Pricing Plans</h1>
-                <p className="text-xl text-gray-500">Choose the perfect AI screening capacity for your hiring volume.</p>
+                <p className="text-xl text-gray-500">Choose the perfect screening capacity for your hiring volume.</p>
                 {org && (
                     <div className="mt-6 inline-flex items-center px-4 py-2 rounded-full bg-indigo-50 border border-indigo-100 text-indigo-700 font-semibold text-sm">
                         You are currently on the <span className="underline decoration-2 underline-offset-4 ml-1">{org.plan}</span> plan.
@@ -81,6 +89,7 @@ const Pricing: React.FC = () => {
                         </div>
 
                         <button
+                            onClick={() => handleSelectPlan(plan)}
                             className={`mb-8 w-full py-3 px-4 rounded-xl font-bold transition-transform hover:-translate-y-0.5 ${plan.highlight ? 'bg-white text-indigo-600 shadow-md hover:bg-gray-50' : org?.plan === plan.name ? 'bg-gray-100 text-gray-400 cursor-not-allowed border border-gray-200' : 'bg-indigo-50 text-indigo-700 hover:bg-indigo-100'}`}
                             disabled={org?.plan === plan.name}
                         >
@@ -106,6 +115,15 @@ const Pricing: React.FC = () => {
                     </motion.div>
                 ))}
             </div>
+
+            {selectedPlan && (
+                <PaymentModal
+                    isOpen={isPaymentModalOpen}
+                    onClose={() => setIsPaymentModalOpen(false)}
+                    planName={selectedPlan.name}
+                    amount={selectedPlan.price}
+                />
+            )}
         </div>
     );
 };
