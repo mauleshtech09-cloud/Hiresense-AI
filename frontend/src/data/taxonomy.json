@@ -7,62 +7,182 @@
         {
           "title": "CEO",
           "type": "Common",
-          "skills": ["Strategic Planning", "Corporate Governance", "Investor Relations", "Executive Leadership"],
-          "weights": { "domain": 35, "skills": 25, "experience": 15, "education": 10, "certs": 10, "support": 5 }
+          "skills": [
+            "Strategic Planning",
+            "Corporate Governance",
+            "Investor Relations",
+            "Executive Leadership"
+          ],
+          "weights": {
+            "domain": 35,
+            "skills": 25,
+            "experience": 15,
+            "education": 10,
+            "certs": 10,
+            "support": 5
+          }
         },
         {
           "title": "Operations Manager",
           "type": "Common",
-          "skills": ["Supply Chain Optimization", "Process Improvement", "Budgeting", "KPI Management"],
-          "weights": { "domain": 30, "skills": 30, "experience": 20, "education": 10, "certs": 5, "support": 5 }
+          "skills": [
+            "Supply Chain Optimization",
+            "Process Improvement",
+            "Budgeting",
+            "KPI Management"
+          ],
+          "weights": {
+            "domain": 30,
+            "skills": 30,
+            "experience": 20,
+            "education": 10,
+            "certs": 5,
+            "support": 5
+          }
         },
         {
           "title": "Marketing Manager",
           "type": "Common",
-          "skills": ["Brand Strategy", "Digital Marketing", "Market Research", "CRM"],
-          "weights": { "domain": 35, "skills": 25, "experience": 15, "education": 10, "certs": 10, "support": 5 }
+          "skills": [
+            "Brand Strategy",
+            "Digital Marketing",
+            "Market Research",
+            "CRM"
+          ],
+          "weights": {
+            "domain": 35,
+            "skills": 25,
+            "experience": 15,
+            "education": 10,
+            "certs": 10,
+            "support": 5
+          }
         },
         {
           "title": "HR Manager",
           "type": "Common",
-          "skills": ["Talent Acquisition", "Employee Relations", "Policy Development", "Compliance"],
-          "weights": { "domain": 35, "skills": 25, "experience": 20, "education": 10, "certs": 5, "support": 5 }
+          "skills": [
+            "Talent Acquisition",
+            "Employee Relations",
+            "Policy Development",
+            "Compliance"
+          ],
+          "weights": {
+            "domain": 35,
+            "skills": 25,
+            "experience": 20,
+            "education": 10,
+            "certs": 5,
+            "support": 5
+          }
         },
         {
           "title": "Sales Manager",
           "type": "Common",
-          "skills": ["Sales Forecasting", "Account Management", "Negotiation", "Lead Generation"],
-          "weights": { "domain": 40, "skills": 20, "experience": 20, "education": 5, "certs": 10, "support": 5 }
+          "skills": [
+            "Sales Forecasting",
+            "Account Management",
+            "Negotiation",
+            "Lead Generation"
+          ],
+          "weights": {
+            "domain": 40,
+            "skills": 20,
+            "experience": 20,
+            "education": 5,
+            "certs": 10,
+            "support": 5
+          }
         },
         {
           "title": "Project Manager",
           "type": "Common",
-          "skills": ["Agile/Scrum", "Risk Management", "Stakeholder Communication", "Resource Planning"],
-          "weights": { "domain": 25, "skills": 35, "experience": 15, "education": 10, "certs": 10, "support": 5 }
+          "skills": [
+            "Agile/Scrum",
+            "Risk Management",
+            "Stakeholder Communication",
+            "Resource Planning"
+          ],
+          "weights": {
+            "domain": 25,
+            "skills": 35,
+            "experience": 15,
+            "education": 10,
+            "certs": 10,
+            "support": 5
+          }
         },
         {
           "title": "Financial Manager",
           "type": "Common",
-          "skills": ["Financial Reporting", "Risk Assessment", "Audit Coordination", "Treasury Management"],
-          "weights": { "domain": 35, "skills": 25, "experience": 15, "education": 10, "certs": 10, "support": 5 }
+          "skills": [
+            "Financial Reporting",
+            "Risk Assessment",
+            "Audit Coordination",
+            "Treasury Management"
+          ],
+          "weights": {
+            "domain": 35,
+            "skills": 25,
+            "experience": 15,
+            "education": 10,
+            "certs": 10,
+            "support": 5
+          }
         },
         {
           "title": "Sustainability Director",
           "type": "Rare",
-          "skills": ["ESG Reporting", "Carbon Accounting", "Circular Economy", "Regulatory Compliance"],
-          "weights": { "domain": 45, "skills": 25, "experience": 10, "education": 5, "certs": 10, "support": 5 }
+          "skills": [
+            "ESG Reporting",
+            "Carbon Accounting",
+            "Circular Economy",
+            "Regulatory Compliance"
+          ],
+          "weights": {
+            "domain": 45,
+            "skills": 25,
+            "experience": 10,
+            "education": 5,
+            "certs": 10,
+            "support": 5
+          }
         },
         {
           "title": "Chief Heart Officer",
           "type": "Rare",
-          "skills": ["Employee Well-being", "Company Culture", "Mental Health Strategy", "Conflict Resolution"],
-          "weights": { "domain": 40, "skills": 20, "experience": 15, "education": 10, "certs": 5, "support": 10 }
+          "skills": [
+            "Employee Well-being",
+            "Company Culture",
+            "Mental Health Strategy",
+            "Conflict Resolution"
+          ],
+          "weights": {
+            "domain": 40,
+            "skills": 20,
+            "experience": 15,
+            "education": 10,
+            "certs": 5,
+            "support": 10
+          }
         },
         {
           "title": "Crisis Management Lead",
           "type": "Rare",
-          "skills": ["Emergency Response", "Business Continuity", "Public Relations", "Risk Mitigation"],
-          "weights": { "domain": 50, "skills": 20, "experience": 15, "education": 5, "certs": 5, "support": 5 }
+          "skills": [
+            "Emergency Response",
+            "Business Continuity",
+            "Public Relations",
+            "Risk Mitigation"
+          ],
+          "weights": {
+            "domain": 50,
+            "skills": 20,
+            "experience": 15,
+            "education": 5,
+            "certs": 5,
+            "support": 5
+          }
         }
       ]
     },
@@ -73,62 +193,182 @@
         {
           "title": "Accountant",
           "type": "Common",
-          "skills": ["GAAP", "General Ledger", "Tax Preparation", "Financial Auditing"],
-          "weights": { "domain": 30, "skills": 30, "experience": 15, "education": 10, "certs": 10, "support": 5 }
+          "skills": [
+            "GAAP",
+            "General Ledger",
+            "Tax Preparation",
+            "Financial Auditing"
+          ],
+          "weights": {
+            "domain": 30,
+            "skills": 30,
+            "experience": 15,
+            "education": 10,
+            "certs": 10,
+            "support": 5
+          }
         },
         {
           "title": "Auditor",
           "type": "Common",
-          "skills": ["Internal Controls", "Compliance Testing", "Data Analysis", "Risk Assessment"],
-          "weights": { "domain": 35, "skills": 25, "experience": 15, "education": 10, "certs": 10, "support": 5 }
+          "skills": [
+            "Internal Controls",
+            "Compliance Testing",
+            "Data Analysis",
+            "Risk Assessment"
+          ],
+          "weights": {
+            "domain": 35,
+            "skills": 25,
+            "experience": 15,
+            "education": 10,
+            "certs": 10,
+            "support": 5
+          }
         },
         {
           "title": "Financial Analyst",
           "type": "Common",
-          "skills": ["Financial Modeling", "Valuation", "Excel VBA", "Market Trends"],
-          "weights": { "domain": 30, "skills": 35, "experience": 15, "education": 10, "certs": 5, "support": 5 }
+          "skills": [
+            "Financial Modeling",
+            "Valuation",
+            "Excel VBA",
+            "Market Trends"
+          ],
+          "weights": {
+            "domain": 30,
+            "skills": 35,
+            "experience": 15,
+            "education": 10,
+            "certs": 5,
+            "support": 5
+          }
         },
         {
           "title": "Budget Analyst",
           "type": "Common",
-          "skills": ["Cost-Benefit Analysis", "Variance Analysis", "Public Sector Budgeting", "Forecasting"],
-          "weights": { "domain": 35, "skills": 25, "experience": 20, "education": 10, "certs": 5, "support": 5 }
+          "skills": [
+            "Cost-Benefit Analysis",
+            "Variance Analysis",
+            "Public Sector Budgeting",
+            "Forecasting"
+          ],
+          "weights": {
+            "domain": 35,
+            "skills": 25,
+            "experience": 20,
+            "education": 10,
+            "certs": 5,
+            "support": 5
+          }
         },
         {
           "title": "Credit Analyst",
           "type": "Common",
-          "skills": ["Credit Risk", "Lending Standards", "Financial Statements", "Underwriting"],
-          "weights": { "domain": 40, "skills": 25, "experience": 15, "education": 10, "certs": 5, "support": 5 }
+          "skills": [
+            "Credit Risk",
+            "Lending Standards",
+            "Financial Statements",
+            "Underwriting"
+          ],
+          "weights": {
+            "domain": 40,
+            "skills": 25,
+            "experience": 15,
+            "education": 10,
+            "certs": 5,
+            "support": 5
+          }
         },
         {
           "title": "Tax Examiner",
           "type": "Common",
-          "skills": ["Tax Law", "Auditing", "Revenue Laws", "Case Management"],
-          "weights": { "domain": 45, "skills": 20, "experience": 15, "education": 10, "certs": 5, "support": 5 }
+          "skills": [
+            "Tax Law",
+            "Auditing",
+            "Revenue Laws",
+            "Case Management"
+          ],
+          "weights": {
+            "domain": 45,
+            "skills": 20,
+            "experience": 15,
+            "education": 10,
+            "certs": 5,
+            "support": 5
+          }
         },
         {
           "title": "Loan Officer",
           "type": "Common",
-          "skills": ["Mortgage Lending", "CRM", "Loan Documentation", "Credit Scoring"],
-          "weights": { "domain": 30, "skills": 30, "experience": 20, "education": 5, "certs": 10, "support": 5 }
+          "skills": [
+            "Mortgage Lending",
+            "CRM",
+            "Loan Documentation",
+            "Credit Scoring"
+          ],
+          "weights": {
+            "domain": 30,
+            "skills": 30,
+            "experience": 20,
+            "education": 5,
+            "certs": 10,
+            "support": 5
+          }
         },
         {
           "title": "Forensic Accountant",
           "type": "Rare",
-          "skills": ["Fraud Investigation", "Litigation Support", "Asset Tracing", "Cyber-Forensics"],
-          "weights": { "domain": 40, "skills": 30, "experience": 10, "education": 5, "certs": 10, "support": 5 }
+          "skills": [
+            "Fraud Investigation",
+            "Litigation Support",
+            "Asset Tracing",
+            "Cyber-Forensics"
+          ],
+          "weights": {
+            "domain": 40,
+            "skills": 30,
+            "experience": 10,
+            "education": 5,
+            "certs": 10,
+            "support": 5
+          }
         },
         {
           "title": "Cryptoeconomics Analyst",
           "type": "Rare",
-          "skills": ["Tokenomics", "Blockchain Analysis", "Game Theory", "DeFi Protocols"],
-          "weights": { "domain": 45, "skills": 35, "experience": 5, "education": 5, "certs": 5, "support": 5 }
+          "skills": [
+            "Tokenomics",
+            "Blockchain Analysis",
+            "Game Theory",
+            "DeFi Protocols"
+          ],
+          "weights": {
+            "domain": 45,
+            "skills": 35,
+            "experience": 5,
+            "education": 5,
+            "certs": 5,
+            "support": 5
+          }
         },
         {
           "title": "Quantitative Risk Strategist",
           "type": "Rare",
-          "skills": ["Monte Carlo Simulation", "Stochastic Modeling", "Python/R", "Derivatives Pricing"],
-          "weights": { "domain": 35, "skills": 40, "experience": 10, "education": 10, "certs": 0, "support": 5 }
+          "skills": [
+            "Monte Carlo Simulation",
+            "Stochastic Modeling",
+            "Python/R",
+            "Derivatives Pricing"
+          ],
+          "weights": {
+            "domain": 35,
+            "skills": 40,
+            "experience": 10,
+            "education": 10,
+            "certs": 0,
+            "support": 5
+          }
         }
       ]
     },
@@ -139,62 +379,182 @@
         {
           "title": "Software Developer",
           "type": "Common",
-          "skills": ["React/Next.js", "Node.js", "System Design", "Unit Testing"],
-          "weights": { "domain": 25, "skills": 40, "experience": 15, "education": 10, "certs": 5, "support": 5 }
+          "skills": [
+            "React/Next.js",
+            "Node.js",
+            "System Design",
+            "Unit Testing"
+          ],
+          "weights": {
+            "domain": 25,
+            "skills": 40,
+            "experience": 15,
+            "education": 10,
+            "certs": 5,
+            "support": 5
+          }
         },
         {
           "title": "Systems Analyst",
           "type": "Common",
-          "skills": ["Requirements Gathering", "UML Modeling", "SDLC", "SQL"],
-          "weights": { "domain": 35, "skills": 25, "experience": 20, "education": 10, "certs": 5, "support": 5 }
+          "skills": [
+            "Requirements Gathering",
+            "UML Modeling",
+            "SDLC",
+            "SQL"
+          ],
+          "weights": {
+            "domain": 35,
+            "skills": 25,
+            "experience": 20,
+            "education": 10,
+            "certs": 5,
+            "support": 5
+          }
         },
         {
           "title": "Database Administrator",
           "type": "Common",
-          "skills": ["SQL Performance Tuning", "Backup & Recovery", "ETL", "NoSQL"],
-          "weights": { "domain": 30, "skills": 35, "experience": 15, "education": 10, "certs": 5, "support": 5 }
+          "skills": [
+            "SQL Performance Tuning",
+            "Backup & Recovery",
+            "ETL",
+            "NoSQL"
+          ],
+          "weights": {
+            "domain": 30,
+            "skills": 35,
+            "experience": 15,
+            "education": 10,
+            "certs": 5,
+            "support": 5
+          }
         },
         {
           "title": "Web Developer",
           "type": "Common",
-          "skills": ["HTML/CSS", "JavaScript", "Responsive Design", "API Integration"],
-          "weights": { "domain": 20, "skills": 45, "experience": 15, "education": 5, "certs": 10, "support": 5 }
+          "skills": [
+            "HTML/CSS",
+            "JavaScript",
+            "Responsive Design",
+            "API Integration"
+          ],
+          "weights": {
+            "domain": 20,
+            "skills": 45,
+            "experience": 15,
+            "education": 5,
+            "certs": 10,
+            "support": 5
+          }
         },
         {
           "title": "Cybersecurity Analyst",
           "type": "Common",
-          "skills": ["SIEM Tools", "Network Security", "Threat Hunting", "Penetration Testing"],
-          "weights": { "domain": 40, "skills": 30, "experience": 10, "education": 5, "certs": 10, "support": 5 }
+          "skills": [
+            "SIEM Tools",
+            "Network Security",
+            "Threat Hunting",
+            "Penetration Testing"
+          ],
+          "weights": {
+            "domain": 40,
+            "skills": 30,
+            "experience": 10,
+            "education": 5,
+            "certs": 10,
+            "support": 5
+          }
         },
         {
           "title": "Data Scientist",
           "type": "Common",
-          "skills": ["Machine Learning", "Python/R", "Data Visualization", "Statistical Analysis"],
-          "weights": { "domain": 30, "skills": 35, "experience": 10, "education": 20, "certs": 0, "support": 5 }
+          "skills": [
+            "Machine Learning",
+            "Python/R",
+            "Data Visualization",
+            "Statistical Analysis"
+          ],
+          "weights": {
+            "domain": 30,
+            "skills": 35,
+            "experience": 10,
+            "education": 20,
+            "certs": 0,
+            "support": 5
+          }
         },
         {
           "title": "Network Architect",
           "type": "Common",
-          "skills": ["Network Infrastructure", "Cloud Architecture (AWS/Azure)", "Cisco Hardware", "BGP/OSPF"],
-          "weights": { "domain": 35, "skills": 30, "experience": 15, "education": 10, "certs": 5, "support": 5 }
+          "skills": [
+            "Network Infrastructure",
+            "Cloud Architecture (AWS/Azure)",
+            "Cisco Hardware",
+            "BGP/OSPF"
+          ],
+          "weights": {
+            "domain": 35,
+            "skills": 30,
+            "experience": 15,
+            "education": 10,
+            "certs": 5,
+            "support": 5
+          }
         },
         {
           "title": "Quantum Computing Scientist",
           "type": "Rare",
-          "skills": ["Qiskit/Cirq", "Linear Algebra", "Algorithm Research", "Quantum Error Correction"],
-          "weights": { "domain": 40, "skills": 30, "experience": 5, "education": 20, "certs": 0, "support": 5 }
+          "skills": [
+            "Qiskit/Cirq",
+            "Linear Algebra",
+            "Algorithm Research",
+            "Quantum Error Correction"
+          ],
+          "weights": {
+            "domain": 40,
+            "skills": 30,
+            "experience": 5,
+            "education": 20,
+            "certs": 0,
+            "support": 5
+          }
         },
         {
           "title": "Ethical AI Auditor",
           "type": "Rare",
-          "skills": ["Bias Detection", "Explainable AI (XAI)", "Regulatory Compliance", "Model Validation"],
-          "weights": { "domain": 45, "skills": 25, "experience": 10, "education": 10, "certs": 5, "support": 5 }
+          "skills": [
+            "Bias Detection",
+            "Explainable AI (XAI)",
+            "Regulatory Compliance",
+            "Model Validation"
+          ],
+          "weights": {
+            "domain": 45,
+            "skills": 25,
+            "experience": 10,
+            "education": 10,
+            "certs": 5,
+            "support": 5
+          }
         },
         {
           "title": "Blockchain Architect",
           "type": "Rare",
-          "skills": ["Solidity", "Smart Contracts", "Consensus Mechanisms", "Hyperledger"],
-          "weights": { "domain": 35, "skills": 40, "experience": 10, "education": 5, "certs": 5, "support": 5 }
+          "skills": [
+            "Solidity",
+            "Smart Contracts",
+            "Consensus Mechanisms",
+            "Hyperledger"
+          ],
+          "weights": {
+            "domain": 35,
+            "skills": 40,
+            "experience": 10,
+            "education": 5,
+            "certs": 5,
+            "support": 5
+          }
         }
       ]
     },
@@ -205,62 +565,182 @@
         {
           "title": "Civil Engineer",
           "type": "Common",
-          "skills": ["Structural Analysis", "AutoCAD", "Project Management", "BIM"],
-          "weights": { "domain": 35, "skills": 25, "experience": 15, "education": 15, "certs": 5, "support": 5 }
+          "skills": [
+            "Structural Analysis",
+            "AutoCAD",
+            "Project Management",
+            "BIM"
+          ],
+          "weights": {
+            "domain": 35,
+            "skills": 25,
+            "experience": 15,
+            "education": 15,
+            "certs": 5,
+            "support": 5
+          }
         },
         {
           "title": "Mechanical Engineer",
           "type": "Common",
-          "skills": ["Thermodynamics", "SolidWorks", "HVAC Design", "FEA Analysis"],
-          "weights": { "domain": 30, "skills": 30, "experience": 20, "education": 10, "certs": 5, "support": 5 }
+          "skills": [
+            "Thermodynamics",
+            "SolidWorks",
+            "HVAC Design",
+            "FEA Analysis"
+          ],
+          "weights": {
+            "domain": 30,
+            "skills": 30,
+            "experience": 20,
+            "education": 10,
+            "certs": 5,
+            "support": 5
+          }
         },
         {
           "title": "Electrical Engineer",
           "type": "Common",
-          "skills": ["Circuit Design", "Power Systems", "PLC Programming", "Embedded Systems"],
-          "weights": { "domain": 35, "skills": 25, "experience": 15, "education": 15, "certs": 5, "support": 5 }
+          "skills": [
+            "Circuit Design",
+            "Power Systems",
+            "PLC Programming",
+            "Embedded Systems"
+          ],
+          "weights": {
+            "domain": 35,
+            "skills": 25,
+            "experience": 15,
+            "education": 15,
+            "certs": 5,
+            "support": 5
+          }
         },
         {
           "title": "Architect",
           "type": "Common",
-          "skills": ["Urban Design", "Revit", "Sustainable Building", "Building Codes"],
-          "weights": { "domain": 40, "skills": 20, "experience": 15, "education": 15, "certs": 5, "support": 5 }
+          "skills": [
+            "Urban Design",
+            "Revit",
+            "Sustainable Building",
+            "Building Codes"
+          ],
+          "weights": {
+            "domain": 40,
+            "skills": 20,
+            "experience": 15,
+            "education": 15,
+            "certs": 5,
+            "support": 5
+          }
         },
         {
           "title": "Industrial Engineer",
           "type": "Common",
-          "skills": ["Six Sigma", "Lean Manufacturing", "Ergonomics", "Operations Research"],
-          "weights": { "domain": 35, "skills": 25, "experience": 20, "education": 10, "certs": 5, "support": 5 }
+          "skills": [
+            "Six Sigma",
+            "Lean Manufacturing",
+            "Ergonomics",
+            "Operations Research"
+          ],
+          "weights": {
+            "domain": 35,
+            "skills": 25,
+            "experience": 20,
+            "education": 10,
+            "certs": 5,
+            "support": 5
+          }
         },
         {
           "title": "Aerospace Engineer",
           "type": "Common",
-          "skills": ["Aerodynamics", "Propulsion Systems", "Avionics", "Materials Science"],
-          "weights": { "domain": 40, "skills": 30, "experience": 10, "education": 15, "certs": 0, "support": 5 }
+          "skills": [
+            "Aerodynamics",
+            "Propulsion Systems",
+            "Avionics",
+            "Materials Science"
+          ],
+          "weights": {
+            "domain": 40,
+            "skills": 30,
+            "experience": 10,
+            "education": 15,
+            "certs": 0,
+            "support": 5
+          }
         },
         {
           "title": "Environmental Engineer",
           "type": "Common",
-          "skills": ["Waste Management", "Water Treatment", "Environmental Impact Assessment", "Hydrology"],
-          "weights": { "domain": 35, "skills": 25, "experience": 20, "education": 15, "certs": 0, "support": 5 }
+          "skills": [
+            "Waste Management",
+            "Water Treatment",
+            "Environmental Impact Assessment",
+            "Hydrology"
+          ],
+          "weights": {
+            "domain": 35,
+            "skills": 25,
+            "experience": 20,
+            "education": 15,
+            "certs": 0,
+            "support": 5
+          }
         },
         {
           "title": "Biomimicry Designer",
           "type": "Rare",
-          "skills": ["Biological Models", "Sustainable Design", "Iterative Prototyping", "Interdisciplinary Collab"],
-          "weights": { "domain": 50, "skills": 20, "experience": 10, "education": 10, "certs": 5, "support": 5 }
+          "skills": [
+            "Biological Models",
+            "Sustainable Design",
+            "Iterative Prototyping",
+            "Interdisciplinary Collab"
+          ],
+          "weights": {
+            "domain": 50,
+            "skills": 20,
+            "experience": 10,
+            "education": 10,
+            "certs": 5,
+            "support": 5
+          }
         },
         {
           "title": "Nano-systems Engineer",
           "type": "Rare",
-          "skills": ["Nanofabrication", "Microscopy (AFM/SEM)", "Chemical Engineering", "Physics"],
-          "weights": { "domain": 45, "skills": 35, "experience": 5, "education": 15, "certs": 0, "support": 0 }
+          "skills": [
+            "Nanofabrication",
+            "Microscopy (AFM/SEM)",
+            "Chemical Engineering",
+            "Physics"
+          ],
+          "weights": {
+            "domain": 45,
+            "skills": 35,
+            "experience": 5,
+            "education": 15,
+            "certs": 0,
+            "support": 0
+          }
         },
         {
           "title": "Space Habitats Architect",
           "type": "Rare",
-          "skills": ["Life Support Systems", "Radiation Shielding", "In-situ Resource Utilization", "Psychological Safety"],
-          "weights": { "domain": 55, "skills": 20, "experience": 10, "education": 10, "certs": 0, "support": 5 }
+          "skills": [
+            "Life Support Systems",
+            "Radiation Shielding",
+            "In-situ Resource Utilization",
+            "Psychological Safety"
+          ],
+          "weights": {
+            "domain": 55,
+            "skills": 20,
+            "experience": 10,
+            "education": 10,
+            "certs": 0,
+            "support": 5
+          }
         }
       ]
     },
@@ -271,62 +751,182 @@
         {
           "title": "Biologist",
           "type": "Common",
-          "skills": ["Lab Research", "Data Collection", "Microscopy", "Technical Writing"],
-          "weights": { "domain": 35, "skills": 25, "experience": 15, "education": 20, "certs": 0, "support": 5 }
+          "skills": [
+            "Lab Research",
+            "Data Collection",
+            "Microscopy",
+            "Technical Writing"
+          ],
+          "weights": {
+            "domain": 35,
+            "skills": 25,
+            "experience": 15,
+            "education": 20,
+            "certs": 0,
+            "support": 5
+          }
         },
         {
           "title": "Chemist",
           "type": "Common",
-          "skills": ["Organic Chemistry", "Spectroscopy", "Chemical Safety", "HPLC"],
-          "weights": { "domain": 30, "skills": 30, "experience": 15, "education": 20, "certs": 0, "support": 5 }
+          "skills": [
+            "Organic Chemistry",
+            "Spectroscopy",
+            "Chemical Safety",
+            "HPLC"
+          ],
+          "weights": {
+            "domain": 30,
+            "skills": 30,
+            "experience": 15,
+            "education": 20,
+            "certs": 0,
+            "support": 5
+          }
         },
         {
           "title": "Environmental Scientist",
           "type": "Common",
-          "skills": ["GIS Mapping", "Field Sampling", "Ecology", "Compliance Analysis"],
-          "weights": { "domain": 35, "skills": 25, "experience": 20, "education": 15, "certs": 0, "support": 5 }
+          "skills": [
+            "GIS Mapping",
+            "Field Sampling",
+            "Ecology",
+            "Compliance Analysis"
+          ],
+          "weights": {
+            "domain": 35,
+            "skills": 25,
+            "experience": 20,
+            "education": 15,
+            "certs": 0,
+            "support": 5
+          }
         },
         {
           "title": "Psychologist",
           "type": "Common",
-          "skills": ["Clinical Assessment", "Cognitive Behavioral Therapy", "Patient Counseling", "Ethics"],
-          "weights": { "domain": 40, "skills": 20, "experience": 15, "education": 20, "certs": 0, "support": 5 }
+          "skills": [
+            "Clinical Assessment",
+            "Cognitive Behavioral Therapy",
+            "Patient Counseling",
+            "Ethics"
+          ],
+          "weights": {
+            "domain": 40,
+            "skills": 20,
+            "experience": 15,
+            "education": 20,
+            "certs": 0,
+            "support": 5
+          }
         },
         {
           "title": "Economist",
           "type": "Common",
-          "skills": ["Econometrics", "Stata/SPSS", "Macroeconomic Policy", "Forecasting"],
-          "weights": { "domain": 35, "skills": 25, "experience": 15, "education": 20, "certs": 0, "support": 5 }
+          "skills": [
+            "Econometrics",
+            "Stata/SPSS",
+            "Macroeconomic Policy",
+            "Forecasting"
+          ],
+          "weights": {
+            "domain": 35,
+            "skills": 25,
+            "experience": 15,
+            "education": 20,
+            "certs": 0,
+            "support": 5
+          }
         },
         {
           "title": "Physicist",
           "type": "Common",
-          "skills": ["Mathematical Modeling", "Optics", "Computational Physics", "Experimental Design"],
-          "weights": { "domain": 30, "skills": 30, "experience": 10, "education": 25, "certs": 0, "support": 5 }
+          "skills": [
+            "Mathematical Modeling",
+            "Optics",
+            "Computational Physics",
+            "Experimental Design"
+          ],
+          "weights": {
+            "domain": 30,
+            "skills": 30,
+            "experience": 10,
+            "education": 25,
+            "certs": 0,
+            "support": 5
+          }
         },
         {
           "title": "Geoscientist",
           "type": "Common",
-          "skills": ["Seismology", "Mineralogy", "Geological Mapping", "Remote Sensing"],
-          "weights": { "domain": 35, "skills": 25, "experience": 20, "education": 15, "certs": 0, "support": 5 }
+          "skills": [
+            "Seismology",
+            "Mineralogy",
+            "Geological Mapping",
+            "Remote Sensing"
+          ],
+          "weights": {
+            "domain": 35,
+            "skills": 25,
+            "experience": 20,
+            "education": 15,
+            "certs": 0,
+            "support": 5
+          }
         },
         {
           "title": "Astrobiologist",
           "type": "Rare",
-          "skills": ["Extremophiles", "Planetary Science", "Genetics", "Origin of Life Research"],
-          "weights": { "domain": 50, "skills": 20, "experience": 5, "education": 25, "certs": 0, "support": 0 }
+          "skills": [
+            "Extremophiles",
+            "Planetary Science",
+            "Genetics",
+            "Origin of Life Research"
+          ],
+          "weights": {
+            "domain": 50,
+            "skills": 20,
+            "experience": 5,
+            "education": 25,
+            "certs": 0,
+            "support": 0
+          }
         },
         {
           "title": "Ethnobotanist",
           "type": "Rare",
-          "skills": ["Traditional Medicine", "Anthropology", "Plant Taxonomy", "Sustainable Harvesting"],
-          "weights": { "domain": 45, "skills": 25, "experience": 10, "education": 15, "certs": 0, "support": 5 }
+          "skills": [
+            "Traditional Medicine",
+            "Anthropology",
+            "Plant Taxonomy",
+            "Sustainable Harvesting"
+          ],
+          "weights": {
+            "domain": 45,
+            "skills": 25,
+            "experience": 10,
+            "education": 15,
+            "certs": 0,
+            "support": 5
+          }
         },
         {
           "title": "Neuroeconomics Researcher",
           "type": "Rare",
-          "skills": ["fMRI Analysis", "Behavioral Economics", "Neuron Modeling", "Experimental Psychology"],
-          "weights": { "domain": 40, "skills": 30, "experience": 5, "education": 20, "certs": 0, "support": 5 }
+          "skills": [
+            "fMRI Analysis",
+            "Behavioral Economics",
+            "Neuron Modeling",
+            "Experimental Psychology"
+          ],
+          "weights": {
+            "domain": 40,
+            "skills": 30,
+            "experience": 5,
+            "education": 20,
+            "certs": 0,
+            "support": 5
+          }
         }
       ]
     },
@@ -337,62 +937,182 @@
         {
           "title": "Clinical Social Worker",
           "type": "Common",
-          "skills": ["Case Management", "Psychosocial Assessment", "Crisis Intervention", "Treatment Planning"],
-          "weights": { "domain": 35, "skills": 25, "experience": 15, "education": 20, "certs": 0, "support": 5 }
+          "skills": [
+            "Case Management",
+            "Psychosocial Assessment",
+            "Crisis Intervention",
+            "Treatment Planning"
+          ],
+          "weights": {
+            "domain": 35,
+            "skills": 25,
+            "experience": 15,
+            "education": 20,
+            "certs": 0,
+            "support": 5
+          }
         },
         {
           "title": "Substance Abuse Counselor",
           "type": "Common",
-          "skills": ["Addiction Therapy", "Motivational Interviewing", "Relapse Prevention", "Group Therapy"],
-          "weights": { "domain": 35, "skills": 30, "experience": 15, "education": 10, "certs": 5, "support": 5 }
+          "skills": [
+            "Addiction Therapy",
+            "Motivational Interviewing",
+            "Relapse Prevention",
+            "Group Therapy"
+          ],
+          "weights": {
+            "domain": 35,
+            "skills": 30,
+            "experience": 15,
+            "education": 10,
+            "certs": 5,
+            "support": 5
+          }
         },
         {
           "title": "Marriage and Family Therapist",
           "type": "Common",
-          "skills": ["Family Systems Theory", "Couples Therapy", "Diagnostic Assessment", "Mediation"],
-          "weights": { "domain": 40, "skills": 20, "experience": 15, "education": 20, "certs": 5, "support": 0 }
+          "skills": [
+            "Family Systems Theory",
+            "Couples Therapy",
+            "Diagnostic Assessment",
+            "Mediation"
+          ],
+          "weights": {
+            "domain": 40,
+            "skills": 20,
+            "experience": 15,
+            "education": 20,
+            "certs": 5,
+            "support": 0
+          }
         },
         {
           "title": "Rehabilitation Counselor",
           "type": "Common",
-          "skills": ["Vocational Assessment", "Disability Case Management", "ADA Compliance", "Career Counseling"],
-          "weights": { "domain": 35, "skills": 25, "experience": 20, "education": 10, "certs": 5, "support": 5 }
+          "skills": [
+            "Vocational Assessment",
+            "Disability Case Management",
+            "ADA Compliance",
+            "Career Counseling"
+          ],
+          "weights": {
+            "domain": 35,
+            "skills": 25,
+            "experience": 20,
+            "education": 10,
+            "certs": 5,
+            "support": 5
+          }
         },
         {
           "title": "Health Educator",
           "type": "Common",
-          "skills": ["Program Development", "Public Health Research", "Curriculum Design", "Community Outreach"],
-          "weights": { "domain": 30, "skills": 30, "experience": 15, "education": 15, "certs": 5, "support": 5 }
+          "skills": [
+            "Program Development",
+            "Public Health Research",
+            "Curriculum Design",
+            "Community Outreach"
+          ],
+          "weights": {
+            "domain": 30,
+            "skills": 30,
+            "experience": 15,
+            "education": 15,
+            "certs": 5,
+            "support": 5
+          }
         },
         {
           "title": "Community Health Worker",
           "type": "Common",
-          "skills": ["Patient Navigation", "Health Advocacy", "Resource Allocation", "Field Data Collection"],
-          "weights": { "domain": 25, "skills": 35, "experience": 20, "education": 10, "certs": 5, "support": 5 }
+          "skills": [
+            "Patient Navigation",
+            "Health Advocacy",
+            "Resource Allocation",
+            "Field Data Collection"
+          ],
+          "weights": {
+            "domain": 25,
+            "skills": 35,
+            "experience": 20,
+            "education": 10,
+            "certs": 5,
+            "support": 5
+          }
         },
         {
           "title": "Probation Officer",
           "type": "Common",
-          "skills": ["Parole Compliance", "Risk Assessment", "Legal Documentation", "Criminal Justice Software"],
-          "weights": { "domain": 40, "skills": 20, "experience": 20, "education": 10, "certs": 5, "support": 5 }
+          "skills": [
+            "Parole Compliance",
+            "Risk Assessment",
+            "Legal Documentation",
+            "Criminal Justice Software"
+          ],
+          "weights": {
+            "domain": 40,
+            "skills": 20,
+            "experience": 20,
+            "education": 10,
+            "certs": 5,
+            "support": 5
+          }
         },
         {
           "title": "Culturally Responsive Care Strategist",
           "type": "Rare",
-          "skills": ["DEI Integration", "Intercultural Competency", "Systemic Barrier Analysis", "Policy Reform"],
-          "weights": { "domain": 50, "skills": 20, "experience": 10, "education": 15, "certs": 0, "support": 5 }
+          "skills": [
+            "DEI Integration",
+            "Intercultural Competency",
+            "Systemic Barrier Analysis",
+            "Policy Reform"
+          ],
+          "weights": {
+            "domain": 50,
+            "skills": 20,
+            "experience": 10,
+            "education": 15,
+            "certs": 0,
+            "support": 5
+          }
         },
         {
           "title": "Algorithmic Harm Social Worker",
           "type": "Rare",
-          "skills": ["Digital Ethics", "Bias Mitigation", "Tech Policy Analysis", "Algorithmic Auditing"],
-          "weights": { "domain": 45, "skills": 30, "experience": 5, "education": 15, "certs": 0, "support": 5 }
+          "skills": [
+            "Digital Ethics",
+            "Bias Mitigation",
+            "Tech Policy Analysis",
+            "Algorithmic Auditing"
+          ],
+          "weights": {
+            "domain": 45,
+            "skills": 30,
+            "experience": 5,
+            "education": 15,
+            "certs": 0,
+            "support": 5
+          }
         },
         {
           "title": "Climate Grief Counselor",
           "type": "Rare",
-          "skills": ["Eco-Anxiety Therapy", "Trauma-Informed Care", "Resilience Building", "Environmental Psychology"],
-          "weights": { "domain": 45, "skills": 25, "experience": 10, "education": 15, "certs": 0, "support": 5 }
+          "skills": [
+            "Eco-Anxiety Therapy",
+            "Trauma-Informed Care",
+            "Resilience Building",
+            "Environmental Psychology"
+          ],
+          "weights": {
+            "domain": 45,
+            "skills": 25,
+            "experience": 10,
+            "education": 15,
+            "certs": 0,
+            "support": 5
+          }
         }
       ]
     },
@@ -403,62 +1123,182 @@
         {
           "title": "Corporate Attorney",
           "type": "Common",
-          "skills": ["Mergers & Acquisitions", "Contract Negotiation", "Securities Regulation", "Corporate Governance"],
-          "weights": { "domain": 40, "skills": 25, "experience": 15, "education": 15, "certs": 0, "support": 5 }
+          "skills": [
+            "Mergers & Acquisitions",
+            "Contract Negotiation",
+            "Securities Regulation",
+            "Corporate Governance"
+          ],
+          "weights": {
+            "domain": 40,
+            "skills": 25,
+            "experience": 15,
+            "education": 15,
+            "certs": 0,
+            "support": 5
+          }
         },
         {
           "title": "Intellectual Property Lawyer",
           "type": "Common",
-          "skills": ["Patent Prosecution", "Trademark Registration", "Copyright Law", "IP Portfolio Management"],
-          "weights": { "domain": 40, "skills": 30, "experience": 10, "education": 15, "certs": 0, "support": 5 }
+          "skills": [
+            "Patent Prosecution",
+            "Trademark Registration",
+            "Copyright Law",
+            "IP Portfolio Management"
+          ],
+          "weights": {
+            "domain": 40,
+            "skills": 30,
+            "experience": 10,
+            "education": 15,
+            "certs": 0,
+            "support": 5
+          }
         },
         {
           "title": "Paralegal",
           "type": "Common",
-          "skills": ["Legal Research", "Document Discovery", "LexisNexis/Westlaw", "Pleadings Drafting"],
-          "weights": { "domain": 30, "skills": 35, "experience": 20, "education": 10, "certs": 0, "support": 5 }
+          "skills": [
+            "Legal Research",
+            "Document Discovery",
+            "LexisNexis/Westlaw",
+            "Pleadings Drafting"
+          ],
+          "weights": {
+            "domain": 30,
+            "skills": 35,
+            "experience": 20,
+            "education": 10,
+            "certs": 0,
+            "support": 5
+          }
         },
         {
           "title": "Compliance Officer",
           "type": "Common",
-          "skills": ["Regulatory Audits", "Risk Mitigation", "Anti-Money Laundering (AML)", "Policy Formulation"],
-          "weights": { "domain": 35, "skills": 30, "experience": 15, "education": 10, "certs": 5, "support": 5 }
+          "skills": [
+            "Regulatory Audits",
+            "Risk Mitigation",
+            "Anti-Money Laundering (AML)",
+            "Policy Formulation"
+          ],
+          "weights": {
+            "domain": 35,
+            "skills": 30,
+            "experience": 15,
+            "education": 10,
+            "certs": 5,
+            "support": 5
+          }
         },
         {
           "title": "Title Examiner",
           "type": "Common",
-          "skills": ["Deed Analysis", "Property Law", "Real Estate Tax Research", "Escrow Processes"],
-          "weights": { "domain": 30, "skills": 35, "experience": 20, "education": 10, "certs": 0, "support": 5 }
+          "skills": [
+            "Deed Analysis",
+            "Property Law",
+            "Real Estate Tax Research",
+            "Escrow Processes"
+          ],
+          "weights": {
+            "domain": 30,
+            "skills": 35,
+            "experience": 20,
+            "education": 10,
+            "certs": 0,
+            "support": 5
+          }
         },
         {
           "title": "Arbitrator",
           "type": "Common",
-          "skills": ["Alternative Dispute Resolution", "Mediation", "Conflict De-escalation", "Evidence Evaluation"],
-          "weights": { "domain": 45, "skills": 20, "experience": 20, "education": 10, "certs": 0, "support": 5 }
+          "skills": [
+            "Alternative Dispute Resolution",
+            "Mediation",
+            "Conflict De-escalation",
+            "Evidence Evaluation"
+          ],
+          "weights": {
+            "domain": 45,
+            "skills": 20,
+            "experience": 20,
+            "education": 10,
+            "certs": 0,
+            "support": 5
+          }
         },
         {
           "title": "Litigation Consultant",
           "type": "Common",
-          "skills": ["Trial Strategy", "Jury Selection", "Witness Preparation", "Case Analytics"],
-          "weights": { "domain": 35, "skills": 30, "experience": 15, "education": 15, "certs": 0, "support": 5 }
+          "skills": [
+            "Trial Strategy",
+            "Jury Selection",
+            "Witness Preparation",
+            "Case Analytics"
+          ],
+          "weights": {
+            "domain": 35,
+            "skills": 30,
+            "experience": 15,
+            "education": 15,
+            "certs": 0,
+            "support": 5
+          }
         },
         {
           "title": "AI Legal Strategist",
           "type": "Rare",
-          "skills": ["AI Governance", "Data Privacy Laws", "Liability Modeling", "Tech Regulation Compliance"],
-          "weights": { "domain": 50, "skills": 25, "experience": 10, "education": 10, "certs": 0, "support": 5 }
+          "skills": [
+            "AI Governance",
+            "Data Privacy Laws",
+            "Liability Modeling",
+            "Tech Regulation Compliance"
+          ],
+          "weights": {
+            "domain": 50,
+            "skills": 25,
+            "experience": 10,
+            "education": 10,
+            "certs": 0,
+            "support": 5
+          }
         },
         {
           "title": "Space Law Specialist",
           "type": "Rare",
-          "skills": ["Outer Space Treaty", "Satellite Regulation", "Orbital Debris Liability", "Aerospace Contracting"],
-          "weights": { "domain": 55, "skills": 20, "experience": 10, "education": 10, "certs": 0, "support": 5 }
+          "skills": [
+            "Outer Space Treaty",
+            "Satellite Regulation",
+            "Orbital Debris Liability",
+            "Aerospace Contracting"
+          ],
+          "weights": {
+            "domain": 55,
+            "skills": 20,
+            "experience": 10,
+            "education": 10,
+            "certs": 0,
+            "support": 5
+          }
         },
         {
           "title": "Smart Contract Dispute Resolver",
           "type": "Rare",
-          "skills": ["Solidity Auditing", "Decentralized Arbitration", "On-Chain Forensics", "Crypto Regulations"],
-          "weights": { "domain": 45, "skills": 35, "experience": 5, "education": 10, "certs": 0, "support": 5 }
+          "skills": [
+            "Solidity Auditing",
+            "Decentralized Arbitration",
+            "On-Chain Forensics",
+            "Crypto Regulations"
+          ],
+          "weights": {
+            "domain": 45,
+            "skills": 35,
+            "experience": 5,
+            "education": 10,
+            "certs": 0,
+            "support": 5
+          }
         }
       ]
     },
@@ -469,62 +1309,182 @@
         {
           "title": "Curriculum Developer",
           "type": "Common",
-          "skills": ["Instructional Design", "LMS Integration", "Educational Needs Assessment", "Standardized Testing"],
-          "weights": { "domain": 35, "skills": 30, "experience": 15, "education": 15, "certs": 0, "support": 5 }
+          "skills": [
+            "Instructional Design",
+            "LMS Integration",
+            "Educational Needs Assessment",
+            "Standardized Testing"
+          ],
+          "weights": {
+            "domain": 35,
+            "skills": 30,
+            "experience": 15,
+            "education": 15,
+            "certs": 0,
+            "support": 5
+          }
         },
         {
           "title": "Special Education Teacher",
           "type": "Common",
-          "skills": ["IEP Development", "Behavior Management", "Adaptive Technologies", "Autism Spectrum Support"],
-          "weights": { "domain": 40, "skills": 20, "experience": 15, "education": 20, "certs": 0, "support": 5 }
+          "skills": [
+            "IEP Development",
+            "Behavior Management",
+            "Adaptive Technologies",
+            "Autism Spectrum Support"
+          ],
+          "weights": {
+            "domain": 40,
+            "skills": 20,
+            "experience": 15,
+            "education": 20,
+            "certs": 0,
+            "support": 5
+          }
         },
         {
           "title": "University Professor",
           "type": "Common",
-          "skills": ["Academic Research", "Grant Writing", "Lecture Delivery", "Peer Review"],
-          "weights": { "domain": 45, "skills": 15, "experience": 10, "education": 25, "certs": 0, "support": 5 }
+          "skills": [
+            "Academic Research",
+            "Grant Writing",
+            "Lecture Delivery",
+            "Peer Review"
+          ],
+          "weights": {
+            "domain": 45,
+            "skills": 15,
+            "experience": 10,
+            "education": 25,
+            "certs": 0,
+            "support": 5
+          }
         },
         {
           "title": "Instructional Coordinator",
           "type": "Common",
-          "skills": ["Teacher Assessment", "Curriculum Mapping", "Professional Development", "Data-Driven Instruction"],
-          "weights": { "domain": 35, "skills": 25, "experience": 20, "education": 15, "certs": 0, "support": 5 }
+          "skills": [
+            "Teacher Assessment",
+            "Curriculum Mapping",
+            "Professional Development",
+            "Data-Driven Instruction"
+          ],
+          "weights": {
+            "domain": 35,
+            "skills": 25,
+            "experience": 20,
+            "education": 15,
+            "certs": 0,
+            "support": 5
+          }
         },
         {
           "title": "Academic Librarian",
           "type": "Common",
-          "skills": ["Information Literacy", "Archive Management", "Cataloging Systems", "Database Research"],
-          "weights": { "domain": 35, "skills": 25, "experience": 15, "education": 20, "certs": 0, "support": 5 }
+          "skills": [
+            "Information Literacy",
+            "Archive Management",
+            "Cataloging Systems",
+            "Database Research"
+          ],
+          "weights": {
+            "domain": 35,
+            "skills": 25,
+            "experience": 15,
+            "education": 20,
+            "certs": 0,
+            "support": 5
+          }
         },
         {
           "title": "E-Learning Specialist",
           "type": "Common",
-          "skills": ["Articulate Storyline", "SCORM", "Video Course Editing", "Gamification"],
-          "weights": { "domain": 30, "skills": 35, "experience": 15, "education": 15, "certs": 0, "support": 5 }
+          "skills": [
+            "Articulate Storyline",
+            "SCORM",
+            "Video Course Editing",
+            "Gamification"
+          ],
+          "weights": {
+            "domain": 30,
+            "skills": 35,
+            "experience": 15,
+            "education": 15,
+            "certs": 0,
+            "support": 5
+          }
         },
         {
           "title": "School Counselor",
           "type": "Common",
-          "skills": ["College Admissions", "Mental Health Triage", "Bullying Prevention", "Standardized Test Administration"],
-          "weights": { "domain": 40, "skills": 20, "experience": 15, "education": 20, "certs": 0, "support": 5 }
+          "skills": [
+            "College Admissions",
+            "Mental Health Triage",
+            "Bullying Prevention",
+            "Standardized Test Administration"
+          ],
+          "weights": {
+            "domain": 40,
+            "skills": 20,
+            "experience": 15,
+            "education": 20,
+            "certs": 0,
+            "support": 5
+          }
         },
         {
           "title": "Metaverse Learning Architect",
           "type": "Rare",
-          "skills": ["Spatial Computing", "XR Instructional Design", "Virtual Asset Creation", "Immersive Pedagogy"],
-          "weights": { "domain": 50, "skills": 30, "experience": 5, "education": 10, "certs": 0, "support": 5 }
+          "skills": [
+            "Spatial Computing",
+            "XR Instructional Design",
+            "Virtual Asset Creation",
+            "Immersive Pedagogy"
+          ],
+          "weights": {
+            "domain": 50,
+            "skills": 30,
+            "experience": 5,
+            "education": 10,
+            "certs": 0,
+            "support": 5
+          }
         },
         {
           "title": "Neurodiversity Education Strategist",
           "type": "Rare",
-          "skills": ["Cognitive Load Management", "UDL Frameworks", "Neuro-Inclusive Design", "Sensory Integration"],
-          "weights": { "domain": 45, "skills": 25, "experience": 10, "education": 15, "certs": 0, "support": 5 }
+          "skills": [
+            "Cognitive Load Management",
+            "UDL Frameworks",
+            "Neuro-Inclusive Design",
+            "Sensory Integration"
+          ],
+          "weights": {
+            "domain": 45,
+            "skills": 25,
+            "experience": 10,
+            "education": 15,
+            "certs": 0,
+            "support": 5
+          }
         },
         {
           "title": "Knowledge Graph Curator",
           "type": "Rare",
-          "skills": ["Semantic Web Technologies", "Ontology Engineering", "RDF/OWL", "Taxonomy Structuring"],
-          "weights": { "domain": 45, "skills": 35, "experience": 5, "education": 10, "certs": 0, "support": 5 }
+          "skills": [
+            "Semantic Web Technologies",
+            "Ontology Engineering",
+            "RDF/OWL",
+            "Taxonomy Structuring"
+          ],
+          "weights": {
+            "domain": 45,
+            "skills": 35,
+            "experience": 5,
+            "education": 10,
+            "certs": 0,
+            "support": 5
+          }
         }
       ]
     },
@@ -535,62 +1495,182 @@
         {
           "title": "Art Director",
           "type": "Common",
-          "skills": ["Visual Storytelling", "Brand Identity", "Adobe Creative Suite", "Typography"],
-          "weights": { "domain": 35, "skills": 35, "experience": 15, "education": 10, "certs": 0, "support": 5 }
+          "skills": [
+            "Visual Storytelling",
+            "Brand Identity",
+            "Adobe Creative Suite",
+            "Typography"
+          ],
+          "weights": {
+            "domain": 35,
+            "skills": 35,
+            "experience": 15,
+            "education": 10,
+            "certs": 0,
+            "support": 5
+          }
         },
         {
           "title": "Graphic Designer",
           "type": "Common",
-          "skills": ["Vector Layouts", "Illustration", "InDesign", "Print Production"],
-          "weights": { "domain": 25, "skills": 45, "experience": 15, "education": 10, "certs": 0, "support": 5 }
+          "skills": [
+            "Vector Layouts",
+            "Illustration",
+            "InDesign",
+            "Print Production"
+          ],
+          "weights": {
+            "domain": 25,
+            "skills": 45,
+            "experience": 15,
+            "education": 10,
+            "certs": 0,
+            "support": 5
+          }
         },
         {
           "title": "Video Editor",
           "type": "Common",
-          "skills": ["Premiere Pro", "After Effects", "Color Grading", "Audio Mixing"],
-          "weights": { "domain": 25, "skills": 45, "experience": 20, "education": 5, "certs": 0, "support": 5 }
+          "skills": [
+            "Premiere Pro",
+            "After Effects",
+            "Color Grading",
+            "Audio Mixing"
+          ],
+          "weights": {
+            "domain": 25,
+            "skills": 45,
+            "experience": 20,
+            "education": 5,
+            "certs": 0,
+            "support": 5
+          }
         },
         {
           "title": "Copywriter",
           "type": "Common",
-          "skills": ["SEO Content", "Advertising Copy", "Proofreading", "A/B Concepting"],
-          "weights": { "domain": 30, "skills": 40, "experience": 15, "education": 10, "certs": 0, "support": 5 }
+          "skills": [
+            "SEO Content",
+            "Advertising Copy",
+            "Proofreading",
+            "A/B Concepting"
+          ],
+          "weights": {
+            "domain": 30,
+            "skills": 40,
+            "experience": 15,
+            "education": 10,
+            "certs": 0,
+            "support": 5
+          }
         },
         {
           "title": "Broadcast Technician",
           "type": "Common",
-          "skills": ["Signal Routing", "Live Streaming Protocols", "A/V Equipment", "Transmission Control"],
-          "weights": { "domain": 30, "skills": 40, "experience": 20, "education": 5, "certs": 5, "support": 0 }
+          "skills": [
+            "Signal Routing",
+            "Live Streaming Protocols",
+            "A/V Equipment",
+            "Transmission Control"
+          ],
+          "weights": {
+            "domain": 30,
+            "skills": 40,
+            "experience": 20,
+            "education": 5,
+            "certs": 5,
+            "support": 0
+          }
         },
         {
           "title": "User Interface Designer",
           "type": "Common",
-          "skills": ["Figma", "Component Libraries", "Prototyping", "Interaction Design"],
-          "weights": { "domain": 25, "skills": 40, "experience": 20, "education": 10, "certs": 0, "support": 5 }
+          "skills": [
+            "Figma",
+            "Component Libraries",
+            "Prototyping",
+            "Interaction Design"
+          ],
+          "weights": {
+            "domain": 25,
+            "skills": 40,
+            "experience": 20,
+            "education": 10,
+            "certs": 0,
+            "support": 5
+          }
         },
         {
           "title": "Public Relations Specialist",
           "type": "Common",
-          "skills": ["Media Pitching", "Crisis Communication", "Press Release Writing", "Campaign Analytics"],
-          "weights": { "domain": 40, "skills": 30, "experience": 15, "education": 10, "certs": 0, "support": 5 }
+          "skills": [
+            "Media Pitching",
+            "Crisis Communication",
+            "Press Release Writing",
+            "Campaign Analytics"
+          ],
+          "weights": {
+            "domain": 40,
+            "skills": 30,
+            "experience": 15,
+            "education": 10,
+            "certs": 0,
+            "support": 5
+          }
         },
         {
           "title": "Synthetic Media Director",
           "type": "Rare",
-          "skills": ["Deepfake Detection", "Neural Rendering", "AI Voice Cloning", "Virtual Influencer Management"],
-          "weights": { "domain": 50, "skills": 30, "experience": 10, "education": 5, "certs": 0, "support": 5 }
+          "skills": [
+            "Deepfake Detection",
+            "Neural Rendering",
+            "AI Voice Cloning",
+            "Virtual Influencer Management"
+          ],
+          "weights": {
+            "domain": 50,
+            "skills": 30,
+            "experience": 10,
+            "education": 5,
+            "certs": 0,
+            "support": 5
+          }
         },
         {
           "title": "Generative Art Prompt Engineer",
           "type": "Rare",
-          "skills": ["Stable Diffusion", "Midjourney Tuning", "Latent Space Exploration", "AI Model Fine-tuning"],
-          "weights": { "domain": 45, "skills": 40, "experience": 5, "education": 5, "certs": 0, "support": 5 }
+          "skills": [
+            "Stable Diffusion",
+            "Midjourney Tuning",
+            "Latent Space Exploration",
+            "AI Model Fine-tuning"
+          ],
+          "weights": {
+            "domain": 45,
+            "skills": 40,
+            "experience": 5,
+            "education": 5,
+            "certs": 0,
+            "support": 5
+          }
         },
         {
           "title": "VR Experience Choreographer",
           "type": "Rare",
-          "skills": ["Motion Capture", "Haptic Feedback Integration", "Spatial Audio Design", "Unreal Engine 5"],
-          "weights": { "domain": 45, "skills": 35, "experience": 10, "education": 5, "certs": 0, "support": 5 }
+          "skills": [
+            "Motion Capture",
+            "Haptic Feedback Integration",
+            "Spatial Audio Design",
+            "Unreal Engine 5"
+          ],
+          "weights": {
+            "domain": 45,
+            "skills": 35,
+            "experience": 10,
+            "education": 5,
+            "certs": 0,
+            "support": 5
+          }
         }
       ]
     },
@@ -601,62 +1681,1112 @@
         {
           "title": "Registered Nurse",
           "type": "Common",
-          "skills": ["Patient Assessment", "IV Therapy", "Electronic Health Records (EHR)", "BLS/ACLS"],
-          "weights": { "domain": 40, "skills": 25, "experience": 20, "education": 10, "certs": 5, "support": 0 }
+          "skills": [
+            "Patient Assessment",
+            "IV Therapy",
+            "Electronic Health Records (EHR)",
+            "BLS/ACLS"
+          ],
+          "weights": {
+            "domain": 40,
+            "skills": 25,
+            "experience": 20,
+            "education": 10,
+            "certs": 5,
+            "support": 0
+          }
         },
         {
           "title": "Physical Therapist",
           "type": "Common",
-          "skills": ["Kinesiology", "Manual Therapy", "Gait Analysis", "Rehabilitation Programming"],
-          "weights": { "domain": 45, "skills": 20, "experience": 15, "education": 15, "certs": 0, "support": 5 }
+          "skills": [
+            "Kinesiology",
+            "Manual Therapy",
+            "Gait Analysis",
+            "Rehabilitation Programming"
+          ],
+          "weights": {
+            "domain": 45,
+            "skills": 20,
+            "experience": 15,
+            "education": 15,
+            "certs": 0,
+            "support": 5
+          }
         },
         {
           "title": "Pharmacist",
           "type": "Common",
-          "skills": ["Pharmacokinetics", "Drug Interactions", "Sterile Compounding", "Patient Counseling"],
-          "weights": { "domain": 45, "skills": 20, "experience": 10, "education": 20, "certs": 0, "support": 5 }
+          "skills": [
+            "Pharmacokinetics",
+            "Drug Interactions",
+            "Sterile Compounding",
+            "Patient Counseling"
+          ],
+          "weights": {
+            "domain": 45,
+            "skills": 20,
+            "experience": 10,
+            "education": 20,
+            "certs": 0,
+            "support": 5
+          }
         },
         {
           "title": "Medical Technologist",
           "type": "Common",
-          "skills": ["Clinical Chemistry", "Hematology Analysis", "LIMS", "Pathogen Culturing"],
-          "weights": { "domain": 35, "skills": 35, "experience": 15, "education": 10, "certs": 5, "support": 0 }
+          "skills": [
+            "Clinical Chemistry",
+            "Hematology Analysis",
+            "LIMS",
+            "Pathogen Culturing"
+          ],
+          "weights": {
+            "domain": 35,
+            "skills": 35,
+            "experience": 15,
+            "education": 10,
+            "certs": 5,
+            "support": 0
+          }
         },
         {
           "title": "Radiologic Technologist",
           "type": "Common",
-          "skills": ["MRI Operations", "CT Scanning", "Radiation Safety", "Image Quality Control"],
-          "weights": { "domain": 35, "skills": 35, "experience": 15, "education": 10, "certs": 5, "support": 0 }
+          "skills": [
+            "MRI Operations",
+            "CT Scanning",
+            "Radiation Safety",
+            "Image Quality Control"
+          ],
+          "weights": {
+            "domain": 35,
+            "skills": 35,
+            "experience": 15,
+            "education": 10,
+            "certs": 5,
+            "support": 0
+          }
         },
         {
           "title": "Dietitian",
           "type": "Common",
-          "skills": ["Medical Nutrition Therapy", "Anthropometric Assessment", "Menu Planning", "Malnutrition Diagnosis"],
-          "weights": { "domain": 40, "skills": 25, "experience": 15, "education": 15, "certs": 0, "support": 5 }
+          "skills": [
+            "Medical Nutrition Therapy",
+            "Anthropometric Assessment",
+            "Menu Planning",
+            "Malnutrition Diagnosis"
+          ],
+          "weights": {
+            "domain": 40,
+            "skills": 25,
+            "experience": 15,
+            "education": 15,
+            "certs": 0,
+            "support": 5
+          }
         },
         {
           "title": "Respiratory Therapist",
           "type": "Common",
-          "skills": ["Ventilator Management", "Blood Gas Analysis", "Airway Clearance", "Pulmonary Function Testing"],
-          "weights": { "domain": 40, "skills": 30, "experience": 15, "education": 10, "certs": 5, "support": 0 }
+          "skills": [
+            "Ventilator Management",
+            "Blood Gas Analysis",
+            "Airway Clearance",
+            "Pulmonary Function Testing"
+          ],
+          "weights": {
+            "domain": 40,
+            "skills": 30,
+            "experience": 15,
+            "education": 10,
+            "certs": 5,
+            "support": 0
+          }
         },
         {
           "title": "Genomic Medicine Specialist",
           "type": "Rare",
-          "skills": ["CRISPR Cas9", "Bioinformatics", "Pharmacogenomics", "Next-Gen Sequencing"],
-          "weights": { "domain": 50, "skills": 25, "experience": 5, "education": 15, "certs": 0, "support": 5 }
+          "skills": [
+            "CRISPR Cas9",
+            "Bioinformatics",
+            "Pharmacogenomics",
+            "Next-Gen Sequencing"
+          ],
+          "weights": {
+            "domain": 50,
+            "skills": 25,
+            "experience": 5,
+            "education": 15,
+            "certs": 0,
+            "support": 5
+          }
         },
         {
           "title": "Telehealth Diagnostics Engineer",
           "type": "Rare",
-          "skills": ["IoT Medical Devices", "Remote Patient Monitoring", "Wearable Sensors", "Data Security (HIPAA)"],
-          "weights": { "domain": 45, "skills": 30, "experience": 10, "education": 10, "certs": 0, "support": 5 }
+          "skills": [
+            "IoT Medical Devices",
+            "Remote Patient Monitoring",
+            "Wearable Sensors",
+            "Data Security (HIPAA)"
+          ],
+          "weights": {
+            "domain": 45,
+            "skills": 30,
+            "experience": 10,
+            "education": 10,
+            "certs": 0,
+            "support": 5
+          }
         },
         {
           "title": "Neurotechnology Clinician",
           "type": "Rare",
-          "skills": ["Brain-Computer Interfaces", "Neurofeedback", "Neuromodulation", "EEG Signal Processing"],
-          "weights": { "domain": 45, "skills": 30, "experience": 10, "education": 10, "certs": 0, "support": 5 }
+          "skills": [
+            "Brain-Computer Interfaces",
+            "Neurofeedback",
+            "Neuromodulation",
+            "EEG Signal Processing"
+          ],
+          "weights": {
+            "domain": 45,
+            "skills": 30,
+            "experience": 10,
+            "education": 10,
+            "certs": 0,
+            "support": 5
+          }
+        }
+      ]
+    },
+    {
+      "id": "33-0000",
+      "name": "Protective Service Occupations",
+      "roles": [
+        {
+          "title": "Police Officer",
+          "type": "Common",
+          "skills": [
+            "Law Enforcement",
+            "Patrol",
+            "Crisis Negotiation",
+            "Incident Reporting"
+          ],
+          "weights": {
+            "domain": 20,
+            "skills": 20,
+            "experience": 25,
+            "education": 10,
+            "certs": 20,
+            "support": 5
+          }
+        },
+        {
+          "title": "Firefighter",
+          "type": "Common",
+          "skills": [
+            "Emergency Response",
+            "Fire Suppression",
+            "Rescue Operations",
+            "Hazmat Handling"
+          ],
+          "weights": {
+            "domain": 20,
+            "skills": 20,
+            "experience": 25,
+            "education": 10,
+            "certs": 20,
+            "support": 5
+          }
+        },
+        {
+          "title": "Security Guard",
+          "type": "Common",
+          "skills": [
+            "Surveillance",
+            "Access Control",
+            "Incident Logging",
+            "Physical Security"
+          ],
+          "weights": {
+            "domain": 25,
+            "skills": 20,
+            "experience": 20,
+            "education": 10,
+            "certs": 15,
+            "support": 10
+          }
+        },
+        {
+          "title": "Correctional Officer",
+          "type": "Common",
+          "skills": [
+            "Inmate Supervision",
+            "Conflict Resolution",
+            "Facility Inspection",
+            "Security Protocol"
+          ],
+          "weights": {
+            "domain": 25,
+            "skills": 20,
+            "experience": 20,
+            "education": 10,
+            "certs": 15,
+            "support": 10
+          }
+        },
+        {
+          "title": "Private Investigator",
+          "type": "Common",
+          "skills": [
+            "Background Checks",
+            "Surveillance Techniques",
+            "Evidence Collection",
+            "Interrogation"
+          ],
+          "weights": {
+            "domain": 25,
+            "skills": 25,
+            "experience": 20,
+            "education": 5,
+            "certs": 20,
+            "support": 5
+          }
+        },
+        {
+          "title": "TSA Screener",
+          "type": "Common",
+          "skills": [
+            "Baggage Screening",
+            "Threat Detection",
+            "Passenger Inspection",
+            "X-Ray Operations"
+          ],
+          "weights": {
+            "domain": 30,
+            "skills": 20,
+            "experience": 15,
+            "education": 10,
+            "certs": 15,
+            "support": 10
+          }
+        },
+        {
+          "title": "Animal Control Officer",
+          "type": "Common",
+          "skills": [
+            "Animal Capture",
+            "Public Safety",
+            "Veterinary First Aid",
+            "Citation Issuance"
+          ],
+          "weights": {
+            "domain": 30,
+            "skills": 20,
+            "experience": 15,
+            "education": 10,
+            "certs": 15,
+            "support": 10
+          }
+        },
+        {
+          "title": "Cybersecurity First Responder",
+          "type": "Rare",
+          "skills": [
+            "Digital Forensics",
+            "Incident Triage",
+            "Network Isolation",
+            "Malware Analysis"
+          ],
+          "weights": {
+            "domain": 45,
+            "skills": 15,
+            "experience": 15,
+            "education": 5,
+            "certs": 15,
+            "support": 5
+          }
+        },
+        {
+          "title": "Counter-Terrorism Analyst",
+          "type": "Rare",
+          "skills": [
+            "Threat Intelligence",
+            "OSINT",
+            "Geopolitical Analysis",
+            "Signal Interception"
+          ],
+          "weights": {
+            "domain": 50,
+            "skills": 10,
+            "experience": 15,
+            "education": 5,
+            "certs": 15,
+            "support": 5
+          }
+        },
+        {
+          "title": "VIP Protection",
+          "type": "Rare",
+          "skills": [
+            "Close Protection",
+            "Route Reconnaissance",
+            "Evasive Driving",
+            "Crowd Control"
+          ],
+          "weights": {
+            "domain": 45,
+            "skills": 15,
+            "experience": 15,
+            "education": 5,
+            "certs": 15,
+            "support": 5
+          }
+        }
+      ]
+    },
+    {
+      "id": "35-0000",
+      "name": "Food Preparation and Serving Related",
+      "roles": [
+        {
+          "title": "Head Chef",
+          "type": "Common",
+          "skills": [
+            "Menu Creation",
+            "Kitchen Management",
+            "Food Costing",
+            "Culinary Techniques"
+          ],
+          "weights": {
+            "domain": 10,
+            "skills": 40,
+            "experience": 35,
+            "education": 5,
+            "certs": 5,
+            "support": 5
+          }
+        },
+        {
+          "title": "Line Cook",
+          "type": "Common",
+          "skills": [
+            "Station Setup",
+            "Grill Operations",
+            "Prep Work",
+            "Sanitation Standards"
+          ],
+          "weights": {
+            "domain": 10,
+            "skills": 45,
+            "experience": 30,
+            "education": 5,
+            "certs": 5,
+            "support": 5
+          }
+        },
+        {
+          "title": "Server",
+          "type": "Common",
+          "skills": [
+            "Order Taking",
+            "Table Service",
+            "Menu Knowledge",
+            "Upselling"
+          ],
+          "weights": {
+            "domain": 10,
+            "skills": 45,
+            "experience": 30,
+            "education": 0,
+            "certs": 5,
+            "support": 10
+          }
+        },
+        {
+          "title": "Bartender",
+          "type": "Common",
+          "skills": [
+            "Mixology",
+            "Customer Service",
+            "Inventory Control",
+            "Cash Handling"
+          ],
+          "weights": {
+            "domain": 10,
+            "skills": 40,
+            "experience": 35,
+            "education": 0,
+            "certs": 5,
+            "support": 10
+          }
+        },
+        {
+          "title": "Barista",
+          "type": "Common",
+          "skills": [
+            "Espresso Extraction",
+            "Latte Art",
+            "Customer Engagement",
+            "Machine Maintenance"
+          ],
+          "weights": {
+            "domain": 15,
+            "skills": 40,
+            "experience": 30,
+            "education": 0,
+            "certs": 5,
+            "support": 10
+          }
+        },
+        {
+          "title": "Food Prep Worker",
+          "type": "Common",
+          "skills": [
+            "Ingredient Chopping",
+            "Portion Control",
+            "Cleaning",
+            "Storage Operations"
+          ],
+          "weights": {
+            "domain": 15,
+            "skills": 40,
+            "experience": 30,
+            "education": 0,
+            "certs": 5,
+            "support": 10
+          }
+        },
+        {
+          "title": "Baker",
+          "type": "Common",
+          "skills": [
+            "Dough Preparation",
+            "Pastry Design",
+            "Oven Management",
+            "Recipe Scaling"
+          ],
+          "weights": {
+            "domain": 10,
+            "skills": 45,
+            "experience": 35,
+            "education": 0,
+            "certs": 5,
+            "support": 5
+          }
+        },
+        {
+          "title": "Molecular Gastronomist",
+          "type": "Rare",
+          "skills": [
+            "Spherification",
+            "Food Chemistry",
+            "Liquid Nitrogen Cooling",
+            "Texture Manipulation"
+          ],
+          "weights": {
+            "domain": 50,
+            "skills": 25,
+            "experience": 15,
+            "education": 5,
+            "certs": 0,
+            "support": 5
+          }
+        },
+        {
+          "title": "Food Stylist",
+          "type": "Rare",
+          "skills": [
+            "Plating Aesthetics",
+            "Photography Lighting",
+            "Prop Selection",
+            "Edible Adhesives"
+          ],
+          "weights": {
+            "domain": 45,
+            "skills": 30,
+            "experience": 15,
+            "education": 5,
+            "certs": 0,
+            "support": 5
+          }
+        },
+        {
+          "title": "Sensory Analyst",
+          "type": "Rare",
+          "skills": [
+            "Flavor Profiling",
+            "Panel Testing",
+            "Statistics",
+            "Aroma Recognition"
+          ],
+          "weights": {
+            "domain": 50,
+            "skills": 25,
+            "experience": 15,
+            "education": 5,
+            "certs": 0,
+            "support": 5
+          }
+        }
+      ]
+    },
+    {
+      "id": "37-0000",
+      "name": "Building and Grounds Cleaning/Maintenance",
+      "roles": [
+        {
+          "title": "Janitor",
+          "type": "Common",
+          "skills": [
+            "Floor Polishing",
+            "Waste Disposal",
+            "Restroom Sanitization",
+            "Inventory Restocking"
+          ],
+          "weights": {
+            "domain": 25,
+            "skills": 30,
+            "experience": 30,
+            "education": 5,
+            "certs": 0,
+            "support": 10
+          }
+        },
+        {
+          "title": "Landscaper",
+          "type": "Common",
+          "skills": [
+            "Lawn Maintenance",
+            "Planting",
+            "Irrigation Systems",
+            "Fertilizer Application"
+          ],
+          "weights": {
+            "domain": 25,
+            "skills": 35,
+            "experience": 25,
+            "education": 0,
+            "certs": 5,
+            "support": 10
+          }
+        },
+        {
+          "title": "Pest Control Worker",
+          "type": "Common",
+          "skills": [
+            "Extermination Techniques",
+            "Chemical Spraying",
+            "Infestation Assessment",
+            "Safety Compliance"
+          ],
+          "weights": {
+            "domain": 30,
+            "skills": 25,
+            "experience": 25,
+            "education": 5,
+            "certs": 10,
+            "support": 5
+          }
+        },
+        {
+          "title": "Maintenance Worker",
+          "type": "Common",
+          "skills": [
+            "Plumbing Repair",
+            "HVAC Troubleshooting",
+            "Electrical Basics",
+            "Carpentry"
+          ],
+          "weights": {
+            "domain": 25,
+            "skills": 35,
+            "experience": 30,
+            "education": 5,
+            "certs": 0,
+            "support": 5
+          }
+        },
+        {
+          "title": "Housekeeper",
+          "type": "Common",
+          "skills": [
+            "Room Detailing",
+            "Laundry Operations",
+            "Stain Removal",
+            "Guest Relations"
+          ],
+          "weights": {
+            "domain": 20,
+            "skills": 35,
+            "experience": 30,
+            "education": 0,
+            "certs": 0,
+            "support": 15
+          }
+        },
+        {
+          "title": "Facilities Groundskeeper",
+          "type": "Common",
+          "skills": [
+            "Turf Management",
+            "Snow Removal",
+            "Equipment Maintenance",
+            "Hardscaping"
+          ],
+          "weights": {
+            "domain": 25,
+            "skills": 30,
+            "experience": 30,
+            "education": 0,
+            "certs": 5,
+            "support": 10
+          }
+        },
+        {
+          "title": "Pool Cleaner",
+          "type": "Common",
+          "skills": [
+            "Water Chemistry",
+            "Filter Maintenance",
+            "Pump Repair",
+            "Vacuum Operations"
+          ],
+          "weights": {
+            "domain": 30,
+            "skills": 30,
+            "experience": 25,
+            "education": 0,
+            "certs": 10,
+            "support": 5
+          }
+        },
+        {
+          "title": "Smart Building Maintenance",
+          "type": "Rare",
+          "skills": [
+            "IoT Sensor Calibration",
+            "Automated HVAC",
+            "Energy Grid Diagnostics",
+            "Software Troubleshooting"
+          ],
+          "weights": {
+            "domain": 45,
+            "skills": 30,
+            "experience": 15,
+            "education": 5,
+            "certs": 0,
+            "support": 5
+          }
+        },
+        {
+          "title": "Vertical Forest Specialist",
+          "type": "Rare",
+          "skills": [
+            "Urban Arboriculture",
+            "Aeroponics",
+            "High-Rise Rigging",
+            "Micro-climate Management"
+          ],
+          "weights": {
+            "domain": 50,
+            "skills": 25,
+            "experience": 10,
+            "education": 5,
+            "certs": 5,
+            "support": 5
+          }
+        },
+        {
+          "title": "Bio-Hazard Remediation",
+          "type": "Rare",
+          "skills": [
+            "Pathogen Decontamination",
+            "Crime Scene Cleanup",
+            "Protective Gear Protocol",
+            "Chemical Disposal"
+          ],
+          "weights": {
+            "domain": 45,
+            "skills": 25,
+            "experience": 15,
+            "education": 0,
+            "certs": 10,
+            "support": 5
+          }
+        }
+      ]
+    },
+    {
+      "id": "39-0000",
+      "name": "Personal Care and Service",
+      "roles": [
+        {
+          "title": "Hair Stylist",
+          "type": "Common",
+          "skills": [
+            "Hair Cutting",
+            "Coloring Techniques",
+            "Client Consultation",
+            "Salon Hygiene"
+          ],
+          "weights": {
+            "domain": 30,
+            "skills": 35,
+            "experience": 20,
+            "education": 5,
+            "certs": 5,
+            "support": 5
+          }
+        },
+        {
+          "title": "Massage Therapist",
+          "type": "Common",
+          "skills": [
+            "Deep Tissue",
+            "Anatomy Knowledge",
+            "Trigger Point Therapy",
+            "Client Relaxation"
+          ],
+          "weights": {
+            "domain": 30,
+            "skills": 30,
+            "experience": 20,
+            "education": 5,
+            "certs": 10,
+            "support": 5
+          }
+        },
+        {
+          "title": "Childcare Worker",
+          "type": "Common",
+          "skills": [
+            "Early Education",
+            "Activity Planning",
+            "Behavior Management",
+            "Pediatric CPR"
+          ],
+          "weights": {
+            "domain": 25,
+            "skills": 25,
+            "experience": 25,
+            "education": 10,
+            "certs": 10,
+            "support": 5
+          }
+        },
+        {
+          "title": "Fitness Trainer",
+          "type": "Common",
+          "skills": [
+            "Workout Programming",
+            "Nutritional Guidance",
+            "Form Correction",
+            "Client Motivation"
+          ],
+          "weights": {
+            "domain": 25,
+            "skills": 30,
+            "experience": 25,
+            "education": 5,
+            "certs": 10,
+            "support": 5
+          }
+        },
+        {
+          "title": "Tour Guide",
+          "type": "Common",
+          "skills": [
+            "Public Speaking",
+            "Historical Knowledge",
+            "Group Management",
+            "Conflict Resolution"
+          ],
+          "weights": {
+            "domain": 30,
+            "skills": 25,
+            "experience": 25,
+            "education": 10,
+            "certs": 0,
+            "support": 10
+          }
+        },
+        {
+          "title": "Manicurist",
+          "type": "Common",
+          "skills": [
+            "Nail Art",
+            "Cuticle Care",
+            "Acrylic Application",
+            "Sanitation Procedures"
+          ],
+          "weights": {
+            "domain": 25,
+            "skills": 35,
+            "experience": 25,
+            "education": 0,
+            "certs": 10,
+            "support": 5
+          }
+        },
+        {
+          "title": "Pet Groomer",
+          "type": "Common",
+          "skills": [
+            "Animal Restraint",
+            "Coat Clipping",
+            "Breed Standards",
+            "Nail Trimming"
+          ],
+          "weights": {
+            "domain": 30,
+            "skills": 30,
+            "experience": 25,
+            "education": 0,
+            "certs": 5,
+            "support": 10
+          }
+        },
+        {
+          "title": "Bio-Hacking Coach",
+          "type": "Rare",
+          "skills": [
+            "Nutrigenomics",
+            "Sleep Optimization",
+            "Wearable Analytics",
+            "Cold Exposure Protocol"
+          ],
+          "weights": {
+            "domain": 45,
+            "skills": 25,
+            "experience": 15,
+            "education": 10,
+            "certs": 0,
+            "support": 5
+          }
+        },
+        {
+          "title": "Virtual Identity Stylist",
+          "type": "Rare",
+          "skills": [
+            "Avatar Customization",
+            "AR Wardrobe Design",
+            "Digital Persona Branding",
+            "Metaverse Aesthetics"
+          ],
+          "weights": {
+            "domain": 50,
+            "skills": 25,
+            "experience": 10,
+            "education": 5,
+            "certs": 0,
+            "support": 10
+          }
+        },
+        {
+          "title": "End-of-Life Doula",
+          "type": "Rare",
+          "skills": [
+            "Grief Counseling",
+            "Legacy Project Planning",
+            "Comfort Care",
+            "Family Mediation"
+          ],
+          "weights": {
+            "domain": 45,
+            "skills": 20,
+            "experience": 20,
+            "education": 5,
+            "certs": 5,
+            "support": 5
+          }
+        }
+      ]
+    },
+    {
+      "id": "41-0000",
+      "name": "Sales and Related",
+      "roles": [
+        {
+          "title": "Retail Sales Associate",
+          "type": "Common",
+          "skills": [
+            "Customer Service",
+            "POS Operations",
+            "Visual Merchandising",
+            "Product Knowledge"
+          ],
+          "weights": {
+            "domain": 10,
+            "skills": 40,
+            "experience": 30,
+            "education": 5,
+            "certs": 0,
+            "support": 15
+          }
+        },
+        {
+          "title": "Real Estate Agent",
+          "type": "Common",
+          "skills": [
+            "Property Valuation",
+            "Contract Negotiation",
+            "Client Prospecting",
+            "Market Analysis"
+          ],
+          "weights": {
+            "domain": 10,
+            "skills": 45,
+            "experience": 35,
+            "education": 0,
+            "certs": 5,
+            "support": 5
+          }
+        },
+        {
+          "title": "B2B Sales Representative",
+          "type": "Common",
+          "skills": [
+            "Cold Calling",
+            "Sales Presentations",
+            "Pipeline Management",
+            "CRM Software"
+          ],
+          "weights": {
+            "domain": 10,
+            "skills": 45,
+            "experience": 35,
+            "education": 5,
+            "certs": 0,
+            "support": 5
+          }
+        },
+        {
+          "title": "Insurance Sales Agent",
+          "type": "Common",
+          "skills": [
+            "Policy Explanation",
+            "Risk Assessment",
+            "Lead Generation",
+            "Client Retention"
+          ],
+          "weights": {
+            "domain": 10,
+            "skills": 40,
+            "experience": 35,
+            "education": 5,
+            "certs": 5,
+            "support": 5
+          }
+        },
+        {
+          "title": "Telemarketer",
+          "type": "Common",
+          "skills": [
+            "Script Adherence",
+            "Objection Handling",
+            "High Volume Dialing",
+            "Data Entry"
+          ],
+          "weights": {
+            "domain": 10,
+            "skills": 40,
+            "experience": 35,
+            "education": 0,
+            "certs": 0,
+            "support": 15
+          }
+        },
+        {
+          "title": "Sales Engineer",
+          "type": "Common",
+          "skills": [
+            "Technical Presentations",
+            "Product Demos",
+            "Solution Architecting",
+            "Proposal Writing"
+          ],
+          "weights": {
+            "domain": 15,
+            "skills": 40,
+            "experience": 35,
+            "education": 5,
+            "certs": 0,
+            "support": 5
+          }
+        },
+        {
+          "title": "Route Sales Driver",
+          "type": "Common",
+          "skills": [
+            "Delivery Logistics",
+            "Account Maintenance",
+            "Invoice Processing",
+            "Inventory Stocking"
+          ],
+          "weights": {
+            "domain": 10,
+            "skills": 40,
+            "experience": 35,
+            "education": 0,
+            "certs": 5,
+            "support": 10
+          }
+        },
+        {
+          "title": "SaaS Growth Hacker",
+          "type": "Rare",
+          "skills": [
+            "Viral Coefficient Modeling",
+            "Conversion Rate Optimization",
+            "Automated Funnels",
+            "A/B Testing"
+          ],
+          "weights": {
+            "domain": 45,
+            "skills": 35,
+            "experience": 15,
+            "education": 0,
+            "certs": 0,
+            "support": 5
+          }
+        },
+        {
+          "title": "High-Ticket Closer",
+          "type": "Rare",
+          "skills": [
+            "Psychological Selling",
+            "Value Articulation",
+            "Deal Structuring",
+            "Objection Reversal"
+          ],
+          "weights": {
+            "domain": 50,
+            "skills": 30,
+            "experience": 15,
+            "education": 0,
+            "certs": 0,
+            "support": 5
+          }
+        },
+        {
+          "title": "Customer Success Architect",
+          "type": "Rare",
+          "skills": [
+            "Churn Mitigation",
+            "Onboarding Strategy",
+            "Account Expansion",
+            "Health Metric Tracking"
+          ],
+          "weights": {
+            "domain": 45,
+            "skills": 30,
+            "experience": 15,
+            "education": 5,
+            "certs": 0,
+            "support": 5
+          }
         }
       ]
     }
