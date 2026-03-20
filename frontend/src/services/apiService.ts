@@ -8,7 +8,7 @@ export const apiFetch = async (endpoint: string, options: RequestInit = {}) => {
     };
     
     if (token) {
-        headers['Authorization'] = token;
+        (headers as Record<string, string>)['Authorization'] = token;
     }
     
     // Auto-remove content type for multipart forms

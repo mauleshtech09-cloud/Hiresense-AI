@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 import { Upload, File, Lock, Zap, Briefcase, MapPin, Search, CheckCircle } from 'lucide-react';
 import { useAuth } from '../context/AuthContext';
 import { useAppState } from '../context/AppStateContext';
-import type { CandidateReport, CandidateScore } from '../context/AppStateContext';
+import type { CandidateReport } from '../context/AppStateContext';
 import ReportSidebar from '../components/ReportSidebar';
 import { resumeService } from '../services/resumeService';
 
