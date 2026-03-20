@@ -8,36 +8,36 @@ const GEMINI_API_URL =
 
 const buildPrompt = (resumeText: string, jobRole: string): string => `
 ROLE: Lead HR Data Auditor & Principal Systems Engineer
-GOAL: Execute "Zero-Compromise" Deep Scan & 10-Section Analysis
-CONTEXT: HireSense AI Intelligent Candidate Engine for role: "${jobRole}"
+GOAL: Execute "Zero-Compromise" High-Accuracy Cross-Referenced Analysis
+CONTEXT: HireSense AI Intelligent Candidate Engine (Recursive Comparison Mode) for role: "${jobRole}"
 
-CRITICAL: Access the provided resume file. You are forbidden from generating generic responses. Every sentence must be grounded in the candidate's actual text. If information is missing, explicitly state 'DATA NOT FOUND' and assign a 0 value to that specific sub-weight.
+CRITICAL: Perform a 'Double-Pass' analysis. Pass 1: Extract Job Requirements based on the Target Role in the Taxonomy. Pass 2: Extract Candidate Data from Resume. Final Step: Map Candidate Data to Requirements using a 'Requirement vs. Fulfillment' logic. If data is missing, mark as 'CRITICAL GAP' and assign 0 weight.
 
 1. THE EVALUATION ALGORITHM (HireSense Blueprint)
 You must apply the following 100-point scoring logic:
-- Domain Relevance (35%): Alignment with the specific industry group.
-- Skill Match (25%): Presence of core technical skills from taxonomy.
-- Experience Depth (15%): Tenure, career progression, and seniority.
-- Educational Background (10%): Degree relevance and institution tier.
-- Certifications (10%): Valid professional licenses/certs.
-- Supportive Evidence (5%): Portfolio, GitHub, and additional achievements.
+- Domain Relevance (35%): Alignment with Industry Group + Role Taxonomy.
+- Skill Match (25%): Technical overlap with Taxonomy-defined skills.
+- Experience Depth (15%): Tenure vs. Seniority expectations.
+- Educational Background (10%): Degree relevance to Domain.
+- Certifications (10%): Licensing compliance.
+- Supportive Evidence (5%): Portfolio/Metric validation.
 
-2. THE 10-SECTION MASTER REPORT STRUCTURE
-[SECTION 1: BASIC INFO] Full Name, Primary Contact, Professional Links, and current Role Title.
-[SECTION 2: EDUCATIONAL BACKGROUND] Degree, Major, Institution, Graduation Date. Note academic honors.
-[SECTION 3: TECHNICAL SKILL INVENTORY] Categorize Hard Skills found. Identify "Skill Gaps".
-[SECTION 4: CHRONOLOGICAL EXPERIENCE] List roles, companies, dates. Total years, Job Hopping vs Tenure.
-[SECTION 5: SALARY EXPECTATION ANALYSIS] Extract or benchmark candidate's market value.
-[SECTION 6: GEOGRAPHIC DATA] Current Location, Relocation Status, Remote vs On-site.
-[SECTION 7: PROJECTS & ACHIEVEMENTS ALIGNMENT] Analyzed projects, extract quantifiable metrics mapped to skills.
-[SECTION 8: MATHEMATICAL EVALUATION] Domain [X/35], Skills [X/25], Experience [X/15], Education [X/10], Certs [X/10], Support [X/5]. Total HIRESENSE SCORE: [X/100].
-[SECTION 9: SUITABILITY VERDICT] Status: HIRE / WAITLIST / REJECT. Justification: Data-driven logic. No fluff.
-[SECTION 10: PRECISION INTERVIEW QUESTIONS] 5 highly technical questions designed to test specific Skill Gaps.
+2. THE 10-SECTION CROSS-REFERENCED REPORT
+[SECTION 1: BASIC INFO] Requirement: Professional Identity. Extraction: Name, Contact, Social Links, Current Title.
+[SECTION 2: EDUCATIONAL BACKGROUND] Fulfillment: Degree/Major/Uni vs. Role Requirement. Match Status: [EXCEEDS / MEETS / BELOW]
+[SECTION 3: TECHNICAL SKILL INVENTORY (THE MATRIX)] Taxonomy Required Skills: List 4 skills from relevant Industry Batch. Candidate Actual Skills: [List skills found in resume]. Comparison: Identify "Direct Matches," "Adjacent Skills," and "Critical Gaps." Use tables.
+[SECTION 4: EXPERIENCE DEPTH & TENURE] Analysis: Career trajectory (Growth vs Stagnation). Highlight tenure stability.
+[SECTION 5: SALARY & MARKET VALUE] Target: Benchmark for Role. Extracted/Estimated: Market value based on skill density.
+[SECTION 6: GEOGRAPHIC & LOGISTICAL DATA] Status: Current Location vs. Office Hub. Preference: Remote flexibility vs. Corporate policy.
+[SECTION 7: PROJECT-SKILL ALIGNMENT] The Proof: Map specific achievements to Technical Skills. Metrics: Extract specific percentages, dollar amounts.
+[SECTION 8: MATHEMATICAL WEIGHTING EVALUATION] Domain: [X/35], Skills: [X/25], Experience: [X/15], Education: [X/10], Certs: [X/10], Support: [X/5]. TOTAL SCORE: [X/100].
+[SECTION 9: SUITABILITY VERDICT & LOGIC] Decision: [HIRE / WAITLIST / REJECT] Logic: Direct comparison of Score vs. Role Benchmark (75+ is HIRE). Highlight highest single Deal-Breaker or Success-Factor.
+[SECTION 10: PRECISION INTERVIEW QUESTIONS] Generate 5 technical questions exposing Critical Gaps and verifying Metrics.
 
-3. QUALITY CONSTRAINTS
-Best API Protocol: Use deep reasoning and multi-modal scanning.
-No Compromise: If a resume is weak, the report must be brutally honest.
-Formatting: Use clear headers and bullet points for high readability WITHIN the string outputs of the JSON payloads.
+3. TECHNICAL CONSTRAINTS
+Groundedness: No hallucinations. Every score must have a quoted text reference from the resume.
+Depth: Scan hidden patterns (e.g., skill mentions in project descriptions).
+Formatting: Use tables for Comparison Sections where possible within the string outputs of the JSON payload fields.
 
 STRICT INSTRUCTION: Return the extracted data in STRICT JSON format ONLY. 
 Do NOT include any markdown code fences surrounding the JSON. Output MUST match this schema exactly:
@@ -126,7 +126,6 @@ export const analyzeResumeWithGemini = async (
     }
 
     const data = await response.json();
-
     const rawText: string = data?.candidates?.[0]?.content?.parts?.[0]?.text ?? '';
 
     if (!rawText) {
@@ -166,7 +165,6 @@ export const analyzeResumeWithGemini = async (
     };
 
     const totalScore = scoreBreakdown.total;
-
     const statusMatch = parsed.suitabilityVerdict?.status || 'REJECTED';
     const recommendation = statusMatch === 'HIRE' ? 'Highly Suitable' 
         : statusMatch === 'WAITLIST' ? 'Moderately Suitable' 
@@ -179,9 +177,9 @@ export const analyzeResumeWithGemini = async (
         jobRole,
         score: totalScore,
         scoreBreakdown,
-        candidateDomain: parsed.basicInfo?.slice(0, 100) || 'Unknown',
+        candidateDomain: String(parsed.basicInfo || '').slice(0, 100) || 'Unknown',
         jobDomain: jobRole,
-        domainMatchStatus: totalScore > 50 ? 'Match' : 'Mismatch',
+        domainMatchStatus: totalScore > 75 ? 'Match' : 'Mismatch',
         topSkills: Array.isArray(parsed.hardSkillsFound) ? parsed.hardSkillsFound : [],
         missingCriticalSkills: Array.isArray(parsed.skillGaps) ? parsed.skillGaps : [],
         strengths: [],
