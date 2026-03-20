@@ -944,9 +944,9 @@
             "Treatment Planning"
           ],
           "weights": {
-            "domain": 35,
+            "domain": 30,
             "skills": 25,
-            "experience": 15,
+            "experience": 20,
             "education": 20,
             "certs": 0,
             "support": 5
@@ -962,11 +962,11 @@
             "Group Therapy"
           ],
           "weights": {
-            "domain": 35,
-            "skills": 30,
-            "experience": 15,
-            "education": 10,
-            "certs": 5,
+            "domain": 30,
+            "skills": 25,
+            "experience": 25,
+            "education": 15,
+            "certs": 0,
             "support": 5
           }
         },
@@ -974,18 +974,18 @@
           "title": "Marriage and Family Therapist",
           "type": "Common",
           "skills": [
-            "Family Systems Theory",
+            "Family Systems",
             "Couples Therapy",
             "Diagnostic Assessment",
             "Mediation"
           ],
           "weights": {
-            "domain": 40,
-            "skills": 20,
-            "experience": 15,
+            "domain": 30,
+            "skills": 25,
+            "experience": 20,
             "education": 20,
-            "certs": 5,
-            "support": 0
+            "certs": 0,
+            "support": 5
           }
         },
         {
@@ -993,16 +993,16 @@
           "type": "Common",
           "skills": [
             "Vocational Assessment",
-            "Disability Case Management",
+            "Case Management",
             "ADA Compliance",
             "Career Counseling"
           ],
           "weights": {
-            "domain": 35,
+            "domain": 30,
             "skills": 25,
             "experience": 20,
-            "education": 10,
-            "certs": 5,
+            "education": 20,
+            "certs": 0,
             "support": 5
           }
         },
@@ -1011,16 +1011,16 @@
           "type": "Common",
           "skills": [
             "Program Development",
-            "Public Health Research",
+            "Public Health",
             "Curriculum Design",
             "Community Outreach"
           ],
           "weights": {
             "domain": 30,
-            "skills": 30,
-            "experience": 15,
-            "education": 15,
-            "certs": 5,
+            "skills": 25,
+            "experience": 20,
+            "education": 20,
+            "certs": 0,
             "support": 5
           }
         },
@@ -1035,10 +1035,10 @@
           ],
           "weights": {
             "domain": 25,
-            "skills": 35,
-            "experience": 20,
-            "education": 10,
-            "certs": 5,
+            "skills": 30,
+            "experience": 25,
+            "education": 15,
+            "certs": 0,
             "support": 5
           }
         },
@@ -1052,64 +1052,64 @@
             "Criminal Justice Software"
           ],
           "weights": {
-            "domain": 40,
-            "skills": 20,
-            "experience": 20,
-            "education": 10,
-            "certs": 5,
+            "domain": 30,
+            "skills": 25,
+            "experience": 25,
+            "education": 15,
+            "certs": 0,
             "support": 5
           }
         },
         {
-          "title": "Culturally Responsive Care Strategist",
+          "title": "Digital Wellbeing Consultant",
           "type": "Rare",
           "skills": [
-            "DEI Integration",
-            "Intercultural Competency",
-            "Systemic Barrier Analysis",
-            "Policy Reform"
+            "Screen Time Management",
+            "Tech Addiction Therapy",
+            "Cyberbullying Intervention",
+            "Digital Detox Planning"
           ],
           "weights": {
             "domain": 50,
             "skills": 20,
-            "experience": 10,
-            "education": 15,
+            "experience": 15,
+            "education": 10,
             "certs": 0,
             "support": 5
           }
         },
         {
-          "title": "Algorithmic Harm Social Worker",
+          "title": "Geriatric Care Manager",
           "type": "Rare",
           "skills": [
-            "Digital Ethics",
-            "Bias Mitigation",
-            "Tech Policy Analysis",
-            "Algorithmic Auditing"
+            "Elder Care Planning",
+            "Medicare Navigation",
+            "Dementia Support",
+            "Family Mediation"
           ],
           "weights": {
-            "domain": 45,
-            "skills": 30,
-            "experience": 5,
-            "education": 15,
+            "domain": 50,
+            "skills": 20,
+            "experience": 20,
+            "education": 5,
             "certs": 0,
             "support": 5
           }
         },
         {
-          "title": "Climate Grief Counselor",
+          "title": "Refugee Integration Specialist",
           "type": "Rare",
           "skills": [
-            "Eco-Anxiety Therapy",
+            "Cross-Cultural Counseling",
+            "Asylum Law Basics",
             "Trauma-Informed Care",
-            "Resilience Building",
-            "Environmental Psychology"
+            "Language Acquisition Support"
           ],
           "weights": {
-            "domain": 45,
-            "skills": 25,
-            "experience": 10,
-            "education": 15,
+            "domain": 50,
+            "skills": 20,
+            "experience": 15,
+            "education": 10,
             "certs": 0,
             "support": 5
           }
@@ -1131,10 +1131,10 @@
           ],
           "weights": {
             "domain": 40,
-            "skills": 25,
+            "skills": 20,
             "experience": 15,
-            "education": 15,
-            "certs": 0,
+            "education": 5,
+            "certs": 15,
             "support": 5
           }
         },
@@ -1145,14 +1145,14 @@
             "Patent Prosecution",
             "Trademark Registration",
             "Copyright Law",
-            "IP Portfolio Management"
+            "IP Portfolio"
           ],
           "weights": {
             "domain": 40,
-            "skills": 30,
-            "experience": 10,
-            "education": 15,
-            "certs": 0,
+            "skills": 20,
+            "experience": 15,
+            "education": 5,
+            "certs": 15,
             "support": 5
           }
         },
@@ -1166,11 +1166,11 @@
             "Pleadings Drafting"
           ],
           "weights": {
-            "domain": 30,
-            "skills": 35,
-            "experience": 20,
-            "education": 10,
-            "certs": 0,
+            "domain": 40,
+            "skills": 20,
+            "experience": 15,
+            "education": 5,
+            "certs": 15,
             "support": 5
           }
         },
@@ -1180,15 +1180,15 @@
           "skills": [
             "Regulatory Audits",
             "Risk Mitigation",
-            "Anti-Money Laundering (AML)",
+            "Anti-Money Laundering",
             "Policy Formulation"
           ],
           "weights": {
-            "domain": 35,
-            "skills": 30,
+            "domain": 40,
+            "skills": 20,
             "experience": 15,
-            "education": 10,
-            "certs": 5,
+            "education": 5,
+            "certs": 15,
             "support": 5
           }
         },
@@ -1198,15 +1198,15 @@
           "skills": [
             "Deed Analysis",
             "Property Law",
-            "Real Estate Tax Research",
+            "Real Estate Tax",
             "Escrow Processes"
           ],
           "weights": {
-            "domain": 30,
-            "skills": 35,
-            "experience": 20,
-            "education": 10,
-            "certs": 0,
+            "domain": 40,
+            "skills": 25,
+            "experience": 10,
+            "education": 5,
+            "certs": 15,
             "support": 5
           }
         },
@@ -1214,17 +1214,17 @@
           "title": "Arbitrator",
           "type": "Common",
           "skills": [
-            "Alternative Dispute Resolution",
+            "Dispute Resolution",
             "Mediation",
             "Conflict De-escalation",
             "Evidence Evaluation"
           ],
           "weights": {
-            "domain": 45,
-            "skills": 20,
+            "domain": 40,
+            "skills": 15,
             "experience": 20,
-            "education": 10,
-            "certs": 0,
+            "education": 5,
+            "certs": 15,
             "support": 5
           }
         },
@@ -1238,52 +1238,16 @@
             "Case Analytics"
           ],
           "weights": {
-            "domain": 35,
-            "skills": 30,
-            "experience": 15,
-            "education": 15,
-            "certs": 0,
-            "support": 5
-          }
-        },
-        {
-          "title": "AI Legal Strategist",
-          "type": "Rare",
-          "skills": [
-            "AI Governance",
-            "Data Privacy Laws",
-            "Liability Modeling",
-            "Tech Regulation Compliance"
-          ],
-          "weights": {
-            "domain": 50,
-            "skills": 25,
-            "experience": 10,
-            "education": 10,
-            "certs": 0,
-            "support": 5
-          }
-        },
-        {
-          "title": "Space Law Specialist",
-          "type": "Rare",
-          "skills": [
-            "Outer Space Treaty",
-            "Satellite Regulation",
-            "Orbital Debris Liability",
-            "Aerospace Contracting"
-          ],
-          "weights": {
-            "domain": 55,
+            "domain": 40,
             "skills": 20,
-            "experience": 10,
-            "education": 10,
-            "certs": 0,
+            "experience": 15,
+            "education": 5,
+            "certs": 15,
             "support": 5
           }
         },
         {
-          "title": "Smart Contract Dispute Resolver",
+          "title": "Smart Contract Auditor",
           "type": "Rare",
           "skills": [
             "Solidity Auditing",
@@ -1292,11 +1256,47 @@
             "Crypto Regulations"
           ],
           "weights": {
+            "domain": 50,
+            "skills": 15,
+            "experience": 10,
+            "education": 5,
+            "certs": 15,
+            "support": 5
+          }
+        },
+        {
+          "title": "Legal Technologist",
+          "type": "Rare",
+          "skills": [
+            "Legal Operations",
+            "E-Discovery Management",
+            "Workflow Automation",
+            "Legal Analytics"
+          ],
+          "weights": {
             "domain": 45,
-            "skills": 35,
-            "experience": 5,
-            "education": 10,
-            "certs": 0,
+            "skills": 20,
+            "experience": 10,
+            "education": 5,
+            "certs": 15,
+            "support": 5
+          }
+        },
+        {
+          "title": "IP Strategist for AI",
+          "type": "Rare",
+          "skills": [
+            "AI Copyright Law",
+            "Patent Strategy",
+            "Open Source Licensing",
+            "Tech Transfer Agreements"
+          ],
+          "weights": {
+            "domain": 50,
+            "skills": 15,
+            "experience": 10,
+            "education": 5,
+            "certs": 15,
             "support": 5
           }
         }
@@ -1312,14 +1312,14 @@
           "skills": [
             "Instructional Design",
             "LMS Integration",
-            "Educational Needs Assessment",
+            "Needs Assessment",
             "Standardized Testing"
           ],
           "weights": {
-            "domain": 35,
-            "skills": 30,
-            "experience": 15,
-            "education": 15,
+            "domain": 25,
+            "skills": 25,
+            "experience": 20,
+            "education": 25,
             "certs": 0,
             "support": 5
           }
@@ -1331,13 +1331,13 @@
             "IEP Development",
             "Behavior Management",
             "Adaptive Technologies",
-            "Autism Spectrum Support"
+            "Autism Support"
           ],
           "weights": {
-            "domain": 40,
+            "domain": 25,
             "skills": 20,
-            "experience": 15,
-            "education": 20,
+            "experience": 20,
+            "education": 30,
             "certs": 0,
             "support": 5
           }
@@ -1352,10 +1352,10 @@
             "Peer Review"
           ],
           "weights": {
-            "domain": 45,
+            "domain": 30,
             "skills": 15,
-            "experience": 10,
-            "education": 25,
+            "experience": 20,
+            "education": 30,
             "certs": 0,
             "support": 5
           }
@@ -1370,10 +1370,10 @@
             "Data-Driven Instruction"
           ],
           "weights": {
-            "domain": 35,
+            "domain": 25,
             "skills": 25,
             "experience": 20,
-            "education": 15,
+            "education": 25,
             "certs": 0,
             "support": 5
           }
@@ -1388,10 +1388,10 @@
             "Database Research"
           ],
           "weights": {
-            "domain": 35,
-            "skills": 25,
-            "experience": 15,
-            "education": 20,
+            "domain": 25,
+            "skills": 20,
+            "experience": 20,
+            "education": 30,
             "certs": 0,
             "support": 5
           }
@@ -1406,10 +1406,10 @@
             "Gamification"
           ],
           "weights": {
-            "domain": 30,
-            "skills": 35,
-            "experience": 15,
-            "education": 15,
+            "domain": 25,
+            "skills": 30,
+            "experience": 20,
+            "education": 20,
             "certs": 0,
             "support": 5
           }
@@ -1421,67 +1421,67 @@
             "College Admissions",
             "Mental Health Triage",
             "Bullying Prevention",
-            "Standardized Test Administration"
+            "Test Administration"
           ],
           "weights": {
-            "domain": 40,
+            "domain": 25,
             "skills": 20,
-            "experience": 15,
+            "experience": 20,
+            "education": 30,
+            "certs": 0,
+            "support": 5
+          }
+        },
+        {
+          "title": "EdTech Experience Designer",
+          "type": "Rare",
+          "skills": [
+            "UX/UI for EdTech",
+            "Gamified Learning",
+            "Accessibility Standards",
+            "Interactive Media"
+          ],
+          "weights": {
+            "domain": 45,
+            "skills": 20,
+            "experience": 10,
             "education": 20,
             "certs": 0,
             "support": 5
           }
         },
         {
-          "title": "Metaverse Learning Architect",
+          "title": "Learning Analytics Specialist",
           "type": "Rare",
           "skills": [
-            "Spatial Computing",
-            "XR Instructional Design",
-            "Virtual Asset Creation",
-            "Immersive Pedagogy"
+            "Educational Data Mining",
+            "Student Success Modeling",
+            "Predictive Analytics",
+            "LMS Admin"
           ],
           "weights": {
             "domain": 50,
-            "skills": 30,
-            "experience": 5,
-            "education": 10,
-            "certs": 0,
-            "support": 5
-          }
-        },
-        {
-          "title": "Neurodiversity Education Strategist",
-          "type": "Rare",
-          "skills": [
-            "Cognitive Load Management",
-            "UDL Frameworks",
-            "Neuro-Inclusive Design",
-            "Sensory Integration"
-          ],
-          "weights": {
-            "domain": 45,
-            "skills": 25,
+            "skills": 15,
             "experience": 10,
-            "education": 15,
+            "education": 20,
             "certs": 0,
             "support": 5
           }
         },
         {
-          "title": "Knowledge Graph Curator",
+          "title": "Micro-credentialing Strategist",
           "type": "Rare",
           "skills": [
-            "Semantic Web Technologies",
-            "Ontology Engineering",
-            "RDF/OWL",
-            "Taxonomy Structuring"
+            "Digital Badging",
+            "Skills Taxonomy Mapping",
+            "Workforce Alignment",
+            "Credential Frameworks"
           ],
           "weights": {
             "domain": 45,
-            "skills": 35,
-            "experience": 5,
-            "education": 10,
+            "skills": 20,
+            "experience": 10,
+            "education": 20,
             "certs": 0,
             "support": 5
           }
@@ -1502,9 +1502,9 @@
             "Typography"
           ],
           "weights": {
-            "domain": 35,
-            "skills": 35,
-            "experience": 15,
+            "domain": 20,
+            "skills": 45,
+            "experience": 20,
             "education": 10,
             "certs": 0,
             "support": 5
@@ -1520,9 +1520,9 @@
             "Print Production"
           ],
           "weights": {
-            "domain": 25,
-            "skills": 45,
-            "experience": 15,
+            "domain": 15,
+            "skills": 50,
+            "experience": 20,
             "education": 10,
             "certs": 0,
             "support": 5
@@ -1538,10 +1538,10 @@
             "Audio Mixing"
           ],
           "weights": {
-            "domain": 25,
+            "domain": 15,
             "skills": 45,
-            "experience": 20,
-            "education": 5,
+            "experience": 25,
+            "education": 10,
             "certs": 0,
             "support": 5
           }
@@ -1556,9 +1556,9 @@
             "A/B Concepting"
           ],
           "weights": {
-            "domain": 30,
-            "skills": 40,
-            "experience": 15,
+            "domain": 20,
+            "skills": 45,
+            "experience": 20,
             "education": 10,
             "certs": 0,
             "support": 5
@@ -1569,17 +1569,17 @@
           "type": "Common",
           "skills": [
             "Signal Routing",
-            "Live Streaming Protocols",
+            "Live Streaming",
             "A/V Equipment",
             "Transmission Control"
           ],
           "weights": {
-            "domain": 30,
-            "skills": 40,
+            "domain": 20,
+            "skills": 45,
             "experience": 20,
-            "education": 5,
-            "certs": 5,
-            "support": 0
+            "education": 10,
+            "certs": 0,
+            "support": 5
           }
         },
         {
@@ -1592,8 +1592,8 @@
             "Interaction Design"
           ],
           "weights": {
-            "domain": 25,
-            "skills": 40,
+            "domain": 15,
+            "skills": 50,
             "experience": 20,
             "education": 10,
             "certs": 0,
@@ -1606,68 +1606,68 @@
           "skills": [
             "Media Pitching",
             "Crisis Communication",
-            "Press Release Writing",
+            "Press Releases",
             "Campaign Analytics"
           ],
           "weights": {
-            "domain": 40,
-            "skills": 30,
-            "experience": 15,
+            "domain": 20,
+            "skills": 45,
+            "experience": 20,
             "education": 10,
             "certs": 0,
             "support": 5
           }
         },
         {
-          "title": "Synthetic Media Director",
+          "title": "VR/AR Experience Designer",
           "type": "Rare",
           "skills": [
-            "Deepfake Detection",
-            "Neural Rendering",
-            "AI Voice Cloning",
-            "Virtual Influencer Management"
+            "Spatial Computing",
+            "Unity/Unreal Engine",
+            "3D Modeling",
+            "Immersive Narrative"
+          ],
+          "weights": {
+            "domain": 45,
+            "skills": 45,
+            "experience": 5,
+            "education": 0,
+            "certs": 0,
+            "support": 5
+          }
+        },
+        {
+          "title": "Prompt Engineer (Creative)",
+          "type": "Rare",
+          "skills": [
+            "Midjourney Tuning",
+            "Latent Space Exploration",
+            "AI Model Fine-tuning",
+            "Generative Concepting"
+          ],
+          "weights": {
+            "domain": 45,
+            "skills": 45,
+            "experience": 5,
+            "education": 0,
+            "certs": 0,
+            "support": 5
+          }
+        },
+        {
+          "title": "Sound Scraper/Audio Forensics",
+          "type": "Rare",
+          "skills": [
+            "Audio Restoration",
+            "Spectral Analysis",
+            "Acoustic Fingerprinting",
+            "Noise Reduction"
           ],
           "weights": {
             "domain": 50,
-            "skills": 30,
-            "experience": 10,
-            "education": 5,
-            "certs": 0,
-            "support": 5
-          }
-        },
-        {
-          "title": "Generative Art Prompt Engineer",
-          "type": "Rare",
-          "skills": [
-            "Stable Diffusion",
-            "Midjourney Tuning",
-            "Latent Space Exploration",
-            "AI Model Fine-tuning"
-          ],
-          "weights": {
-            "domain": 45,
-            "skills": 40,
-            "experience": 5,
-            "education": 5,
-            "certs": 0,
-            "support": 5
-          }
-        },
-        {
-          "title": "VR Experience Choreographer",
-          "type": "Rare",
-          "skills": [
-            "Motion Capture",
-            "Haptic Feedback Integration",
-            "Spatial Audio Design",
-            "Unreal Engine 5"
-          ],
-          "weights": {
-            "domain": 45,
-            "skills": 35,
-            "experience": 10,
-            "education": 5,
+            "skills": 45,
+            "experience": 0,
+            "education": 0,
             "certs": 0,
             "support": 5
           }
@@ -1684,16 +1684,16 @@
           "skills": [
             "Patient Assessment",
             "IV Therapy",
-            "Electronic Health Records (EHR)",
+            "EHR Systems",
             "BLS/ACLS"
           ],
           "weights": {
             "domain": 40,
-            "skills": 25,
-            "experience": 20,
+            "skills": 15,
+            "experience": 15,
             "education": 10,
-            "certs": 5,
-            "support": 0
+            "certs": 15,
+            "support": 5
           }
         },
         {
@@ -1706,11 +1706,11 @@
             "Rehabilitation Programming"
           ],
           "weights": {
-            "domain": 45,
-            "skills": 20,
+            "domain": 40,
+            "skills": 15,
             "experience": 15,
-            "education": 15,
-            "certs": 0,
+            "education": 10,
+            "certs": 15,
             "support": 5
           }
         },
@@ -1725,10 +1725,10 @@
           ],
           "weights": {
             "domain": 45,
-            "skills": 20,
+            "skills": 15,
             "experience": 10,
-            "education": 20,
-            "certs": 0,
+            "education": 10,
+            "certs": 15,
             "support": 5
           }
         },
@@ -1742,12 +1742,12 @@
             "Pathogen Culturing"
           ],
           "weights": {
-            "domain": 35,
-            "skills": 35,
-            "experience": 15,
+            "domain": 40,
+            "skills": 20,
+            "experience": 10,
             "education": 10,
-            "certs": 5,
-            "support": 0
+            "certs": 15,
+            "support": 5
           }
         },
         {
@@ -1760,12 +1760,12 @@
             "Image Quality Control"
           ],
           "weights": {
-            "domain": 35,
-            "skills": 35,
-            "experience": 15,
+            "domain": 40,
+            "skills": 20,
+            "experience": 10,
             "education": 10,
-            "certs": 5,
-            "support": 0
+            "certs": 15,
+            "support": 5
           }
         },
         {
@@ -1779,10 +1779,10 @@
           ],
           "weights": {
             "domain": 40,
-            "skills": 25,
+            "skills": 15,
             "experience": 15,
-            "education": 15,
-            "certs": 0,
+            "education": 10,
+            "certs": 15,
             "support": 5
           }
         },
@@ -1797,64 +1797,64 @@
           ],
           "weights": {
             "domain": 40,
-            "skills": 30,
+            "skills": 15,
             "experience": 15,
             "education": 10,
-            "certs": 5,
-            "support": 0
+            "certs": 15,
+            "support": 5
           }
         },
         {
-          "title": "Genomic Medicine Specialist",
+          "title": "Telemedicine Specialist",
           "type": "Rare",
           "skills": [
-            "CRISPR Cas9",
-            "Bioinformatics",
-            "Pharmacogenomics",
-            "Next-Gen Sequencing"
+            "Virtual Diagnostics",
+            "HIPAA Compliance",
+            "Remote Patient Monitoring",
+            "Digital Triage"
           ],
           "weights": {
             "domain": 50,
-            "skills": 25,
-            "experience": 5,
-            "education": 15,
-            "certs": 0,
+            "skills": 10,
+            "experience": 10,
+            "education": 10,
+            "certs": 15,
             "support": 5
           }
         },
         {
-          "title": "Telehealth Diagnostics Engineer",
+          "title": "Bio-Informatics Clinician",
           "type": "Rare",
           "skills": [
-            "IoT Medical Devices",
-            "Remote Patient Monitoring",
-            "Wearable Sensors",
-            "Data Security (HIPAA)"
+            "Clinical Data Modeling",
+            "Genomic Integration",
+            "EHR Optimization",
+            "Healthcare Analytics"
           ],
           "weights": {
-            "domain": 45,
-            "skills": 30,
+            "domain": 50,
+            "skills": 10,
             "experience": 10,
             "education": 10,
-            "certs": 0,
+            "certs": 15,
             "support": 5
           }
         },
         {
-          "title": "Neurotechnology Clinician",
+          "title": "Genomic Counselor",
           "type": "Rare",
           "skills": [
-            "Brain-Computer Interfaces",
-            "Neurofeedback",
-            "Neuromodulation",
-            "EEG Signal Processing"
+            "Genetic Risk Assessment",
+            "Patient Advocacy",
+            "Pedigree Analysis",
+            "Variant Interpretation"
           ],
           "weights": {
-            "domain": 45,
-            "skills": 30,
+            "domain": 50,
+            "skills": 10,
             "experience": 10,
             "education": 10,
-            "certs": 0,
+            "certs": 15,
             "support": 5
           }
         }
