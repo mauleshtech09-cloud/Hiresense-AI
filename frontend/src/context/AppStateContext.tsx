@@ -36,6 +36,9 @@ export interface CandidateReport {
     
     roleSuitability: string; // The evaluation prose
     recommendation: 'Highly Suitable' | 'Moderately Suitable' | 'Low Suitability' | 'Not Suitable';
+    
+    // Master 10-Section JSON output from AI Engine
+    masterAnalysis?: any;
 }
 
 interface AppStateContextType {

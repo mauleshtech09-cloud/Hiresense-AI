@@ -6,49 +6,38 @@ import type { CandidateReport, CandidateScore } from '../context/AppStateContext
 const GEMINI_API_URL =
     'https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent';
 
-const buildPrompt = (resumeText: string, jobRole: string): string => `
-You are an expert document analyst specializing in resume data extraction.
+const buildPrompt = (resumeText: string, jobRole: string): string => \`
+You are a Senior HR Data Scientist & Lead Principal Engineer for the HireSense AI Intelligent Engine - Tier: Master Analysis.
 
-Extract the following information from the resume and compare it with the requirements for the position: "${jobRole}".
+CRITICAL: Perform a multi-pass deep scan of the provided resume. Do not hallucinate. If data is missing, mark as 'NOT PROVIDED' and penalize the weight accordingly. Use the HireSense Evaluation Formula: Domain (35%), Skills (25%), Experience (15%), Education (10%), Certs (10%), Support (5%).
+
+ANALYSIS PARAMETERS
+API Mode: Deep Reasoning + Image/PDF Understanding.
+Tone: Professional, Analytical, Decisive.
+Reference: Compare candidate data against industrial standards.
 
 Return the extracted data in STRICT JSON format ONLY.
 Do NOT include any markdown, code fences, explanation, or text outside the JSON object.
 
 The JSON must follow this exact schema:
 {
-  "candidateName": "string – full name extracted from resume, or 'Unknown Candidate'",
-  "candidateDomain": "string – primary domain of expertise (e.g. Software Development, UI/UX, etc.)",
-  "jobDomain": "string – domain associated with the role '${jobRole}'",
-  "domainMatchStatus": "Match or Mismatch",
-  "score": number (0-100, calculated as sum of breakdown fields),
-  "scoreBreakdown": {
-    "domainRelevance": number (0-35),
-    "skillMatch": number (0-25),
-    "experienceMatch": number (0-15),
-    "educationMatch": number (0-10),
-    "certifications": number (0-10),
-    "supportingSkills": number (0-5)
-  },
-  "topSkills": ["array of up to 6 key skills found in resume"],
-  "missingCriticalSkills": ["array of required skills not found in resume"],
-  "strengths": ["array of 2-4 candidate strengths"],
-  "weaknesses": ["array of 2-4 gaps or areas for improvement"],
-  "experienceEvaluation": "string – summary of experience relevance",
-  "educationAlignment": "string – summary of education relevance",
-  "criticalGaps": ["array of 1-3 critical missing requirements"],
-  "roleSuitability": "string – 2-3 sentence summary of candidate's alignment for the position",
-  "recommendation": "exactly one of: Highly Suitable | Moderately Suitable | Low Suitability | Not Suitable"
+  "basicInfo": { "name": "string", "contact": "string", "portfolioLinks": ["string"], "summarySentiment": "string" },
+  "educationalBackground": { "degrees": ["string"], "institutions": ["string"], "graduationYear": "string", "relevance": "string" },
+  "skillGapAnalysis": { "hardSkillsFound": ["string"], "missingHighImpactSkills": ["string"] },
+  "experienceDepth": { "chronologicalBreakdown": "string", "tenure": "string", "careerProgression": "string" },
+  "salaryAlignment": { "extractedExpectedSalary": "string" },
+  "geographicFlexibility": { "currentLocation": "string", "relocationRemotePreference": "string" },
+  "projectsAndAchievementsAlignment": { "analyzedProjects": ["string"], "quantifiableMetrics": ["string"] },
+  "overallEvaluation": { "domain": number, "skills": number, "experience": number, "education": number, "certs": number, "support": number, "totalScore": number },
+  "suitabilityStatus": { "status": "SELECTED | WAITLISTED | REJECTED", "justification": "string (2-3 sentences of cold, hard logic based on the score)" },
+  "strategicInterviewQuestions": ["string", "string", "string", "string", "string"]
 }
-
-Extraction rules:
-- Provide factual summaries based ONLY on the provided text.
-- Match scores should reflect objective alignment with '${jobRole}'.
 
 Resume Text:
 """
-${resumeText}
+\${resumeText}
 """
-`.trim();
+\`.trim();
 
 /**
  * Helper to fetch with exponential backoff on 429 (Quota Exceeded)
@@ -136,54 +125,45 @@ export const analyzeResumeWithGemini = async (
     const clamp = (val: any, min: number, max: number): number =>
         Math.min(max, Math.max(min, Number(val) || 0));
 
+    const evalData = parsed.overallEvaluation || {};
     const scoreBreakdown: CandidateScore = {
-        total: 0, // Placeholder, will be updated below
-        domainRelevance: clamp(parsed.scoreBreakdown?.domainRelevance, 0, 35),
-        skillMatch: clamp(parsed.scoreBreakdown?.skillMatch, 0, 25),
-        experienceMatch: clamp(parsed.scoreBreakdown?.experienceMatch, 0, 15),
-        educationMatch: clamp(parsed.scoreBreakdown?.educationMatch, 0, 10),
-        certifications: clamp(parsed.scoreBreakdown?.certifications, 0, 10),
-        supportingSkills: clamp(parsed.scoreBreakdown?.supportingSkills, 0, 5),
+        total: clamp(evalData.totalScore || 0, 0, 100),
+        domainRelevance: clamp(evalData.domain, 0, 35),
+        skillMatch: clamp(evalData.skills, 0, 25),
+        experienceMatch: clamp(evalData.experience, 0, 15),
+        educationMatch: clamp(evalData.education, 0, 10),
+        certifications: clamp(evalData.certs, 0, 10),
+        supportingSkills: clamp(evalData.support, 0, 5),
     };
 
-    const totalScore =
-        scoreBreakdown.domainRelevance +
-        scoreBreakdown.skillMatch +
-        scoreBreakdown.experienceMatch +
-        scoreBreakdown.educationMatch +
-        scoreBreakdown.certifications +
-        scoreBreakdown.supportingSkills;
+    const totalScore = scoreBreakdown.total;
 
-    scoreBreakdown.total = totalScore;
-
-    const validRecommendations = ['Highly Suitable', 'Moderately Suitable', 'Low Suitability', 'Not Suitable'];
-    const recommendation = validRecommendations.includes(parsed.recommendation)
-        ? parsed.recommendation
-        : totalScore > 75 ? 'Highly Suitable'
-            : totalScore > 60 ? 'Moderately Suitable'
-                : totalScore > 40 ? 'Low Suitability'
-                    : 'Not Suitable';
+    const statusMatch = parsed.suitabilityStatus?.status || 'REJECTED';
+    const recommendation = statusMatch === 'SELECTED' ? 'Highly Suitable' 
+        : statusMatch === 'WAITLISTED' ? 'Moderately Suitable' 
+        : 'Not Suitable';
 
     const report: CandidateReport = {
         id: Math.random().toString(36).substr(2, 9),
         date: new Date().toISOString().split('T')[0],
-        candidateName: parsed.candidateName || fileName.replace(/\.pdf$/i, ''),
+        candidateName: parsed.basicInfo?.name || fileName.replace(/\.pdf$/i, ''),
         jobRole,
-        score: clamp(totalScore, 0, 100),
+        score: totalScore,
         scoreBreakdown,
-        candidateDomain: parsed.candidateDomain || 'Unknown',
-        jobDomain: parsed.jobDomain || jobRole,
-        domainMatchStatus: parsed.domainMatchStatus === 'Match' ? 'Match' : 'Mismatch',
-        topSkills: Array.isArray(parsed.topSkills) ? parsed.topSkills : [],
-        missingCriticalSkills: Array.isArray(parsed.missingCriticalSkills) ? parsed.missingCriticalSkills : [],
-        strengths: Array.isArray(parsed.strengths) ? parsed.strengths : [],
-        weaknesses: Array.isArray(parsed.weaknesses) ? parsed.weaknesses : [],
-        experienceEvaluation: parsed.experienceEvaluation || '',
-        educationAlignment: parsed.educationAlignment || '',
-        criticalGaps: Array.isArray(parsed.criticalGaps) ? parsed.criticalGaps : [],
-        roleSuitability: parsed.roleSuitability || '',
+        candidateDomain: parsed.basicInfo?.summarySentiment || 'Unknown',
+        jobDomain: jobRole,
+        domainMatchStatus: totalScore > 40 ? 'Match' : 'Mismatch',
+        topSkills: Array.isArray(parsed.skillGapAnalysis?.hardSkillsFound) ? parsed.skillGapAnalysis.hardSkillsFound : [],
+        missingCriticalSkills: Array.isArray(parsed.skillGapAnalysis?.missingHighImpactSkills) ? parsed.skillGapAnalysis.missingHighImpactSkills : [],
+        strengths: Array.isArray(parsed.projectsAndAchievementsAlignment?.quantifiableMetrics) ? parsed.projectsAndAchievementsAlignment.quantifiableMetrics : [],
+        weaknesses: [],
+        experienceEvaluation: parsed.experienceDepth?.tenure || '',
+        educationAlignment: parsed.educationalBackground?.relevance || '',
+        criticalGaps: Array.isArray(parsed.skillGapAnalysis?.missingHighImpactSkills) ? parsed.skillGapAnalysis.missingHighImpactSkills : [],
+        roleSuitability: parsed.suitabilityStatus?.justification || '',
         recommendation,
-        matchedSkills: Array.isArray(parsed.topSkills) ? parsed.topSkills : [],
+        matchedSkills: Array.isArray(parsed.skillGapAnalysis?.hardSkillsFound) ? parsed.skillGapAnalysis.hardSkillsFound : [],
+        masterAnalysis: parsed
     };
 
     return report;
