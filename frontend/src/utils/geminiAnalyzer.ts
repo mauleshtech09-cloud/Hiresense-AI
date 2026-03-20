@@ -1,73 +1,38 @@
 // utils/geminiAnalyzer.ts
-// Sends extracted resume text + job role to Gemini API and returns structured JSON analysis.
-
 import type { CandidateReport, CandidateScore } from '../context/AppStateContext';
 
 const GEMINI_API_URL =
     'https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent';
 
-const buildPrompt = (resumeText: string, jobRole: string): string => `
-ROLE: Lead HR Data Auditor & Principal Systems Engineer
-GOAL: Execute "Zero-Compromise" High-Accuracy Cross-Referenced Analysis
-CONTEXT: HireSense AI Intelligent Candidate Engine (Recursive Comparison Mode) for role: "${jobRole}"
+const buildPrompt = (resumeText: string): string => `
+ROLE: Lead Systems Auditor & Data Extraction Architect
+OBJECTIVE: Zero-Bias Dynamic Resume Analysis (Fixing Default Software/MS Office Bias)
 
-CRITICAL: Perform a 'Double-Pass' analysis. Pass 1: Extract Job Requirements based on the Target Role in the Taxonomy. Pass 2: Extract Candidate Data from Resume. Final Step: Map Candidate Data to Requirements using a 'Requirement vs. Fulfillment' logic. If data is missing, mark as 'CRITICAL GAP' and assign 0 weight.
+CRITICAL: Disable all default templates. Do not assume 'Software Development'. Do not assume 'MS Office'. You must perform a 'Blank Slate' extraction. If the resume is for a Nurse, the report must reflect Healthcare. If it is for a Welder, it must reflect Manufacturing.
 
-1. THE EVALUATION ALGORITHM (HireSense Blueprint)
-You must apply the following 100-point scoring logic:
-- Domain Relevance (35%): Alignment with Industry Group + Role Taxonomy.
-- Skill Match (25%): Technical overlap with Taxonomy-defined skills.
-- Experience Depth (15%): Tenure vs. Seniority expectations.
-- Educational Background (10%): Degree relevance to Domain.
-- Certifications (10%): Licensing compliance.
-- Supportive Evidence (5%): Portfolio/Metric validation.
+1. DYNAMIC CONTEXT DISCOVERY (Step 1)
+Before generating the report, answer these 3 internal check-points based ONLY on the uploaded file:
+Primary Industry: [Identify from Resume text]
+Target Job Title: [Identify from Resume Summary/Experience]
+Core Technical Stack: [List the top 5 skills actually written in the file]
 
-2. THE 10-SECTION CROSS-REFERENCED REPORT
-[SECTION 1: BASIC INFO] Requirement: Professional Identity. Extraction: Name, Contact, Social Links, Current Title.
-[SECTION 2: EDUCATIONAL BACKGROUND] Fulfillment: Degree/Major/Uni vs. Role Requirement. Match Status: [EXCEEDS / MEETS / BELOW]
-[SECTION 3: TECHNICAL SKILL INVENTORY (THE MATRIX)] Taxonomy Required Skills: List 4 skills from relevant Industry Batch. Candidate Actual Skills: [List skills found in resume]. Comparison: Identify "Direct Matches," "Adjacent Skills," and "Critical Gaps." Use tables.
-[SECTION 4: EXPERIENCE DEPTH & TENURE] Analysis: Career trajectory (Growth vs Stagnation). Highlight tenure stability.
-[SECTION 5: SALARY & MARKET VALUE] Target: Benchmark for Role. Extracted/Estimated: Market value based on skill density.
-[SECTION 6: GEOGRAPHIC & LOGISTICAL DATA] Status: Current Location vs. Office Hub. Preference: Remote flexibility vs. Corporate policy.
-[SECTION 7: PROJECT-SKILL ALIGNMENT] The Proof: Map specific achievements to Technical Skills. Metrics: Extract specific percentages, dollar amounts.
-[SECTION 8: MATHEMATICAL WEIGHTING EVALUATION] Domain: [X/35], Skills: [X/25], Experience: [X/15], Education: [X/10], Certs: [X/10], Support: [X/5]. TOTAL SCORE: [X/100].
-[SECTION 9: SUITABILITY VERDICT & LOGIC] Decision: [HIRE / WAITLIST / REJECT] Logic: Direct comparison of Score vs. Role Benchmark (75+ is HIRE). Highlight highest single Deal-Breaker or Success-Factor.
-[SECTION 10: PRECISION INTERVIEW QUESTIONS] Generate 5 technical questions exposing Critical Gaps and verifying Metrics.
-
-3. TECHNICAL CONSTRAINTS
-Groundedness: No hallucinations. Every score must have a quoted text reference from the resume.
-Depth: Scan hidden patterns (e.g., skill mentions in project descriptions).
-Formatting: Use tables for Comparison Sections where possible within the string outputs of the JSON payload fields.
-
-STRICT INSTRUCTION: Return the extracted data in STRICT JSON format ONLY. 
-Do NOT include any markdown code fences surrounding the JSON. Output MUST match this schema exactly:
+2. THE 10-SECTION CROSS-REFERENCED REPORT (Step 2)
+Generate a JSON object with numbered string keys "1" through "10" containing the following structures:
 
 {
-  "basicInfo": "Markdown string",
-  "educationalBackground": "Markdown string",
-  "skillInventory": "Markdown string",
-  "chronologicalExperience": "Markdown string",
-  "salaryExpectation": "Markdown string",
-  "geographicData": "Markdown string",
-  "projectsAchievements": "Markdown string",
-  "mathematicalEvaluation": {
-     "domain": number,
-     "skills": number,
-     "experience": number,
-     "education": number,
-     "certs": number,
-     "support": number,
-     "totalScore": number
-  },
-  "suitabilityVerdict": {
-     "status": "HIRE | WAITLIST | REJECT",
-     "justification": "Markdown string"
-  },
-  "interviewQuestions": ["q1", "q2", "q3", "q4", "q5"],
-  "extractedName": "string",
-  "skillGaps": ["missing skill 1", "missing skill 2"],
-  "hardSkillsFound": ["found skill 1", "found skill 2"]
+  "1": { "dynamic_industry": "Primary Industry", "name": "Name", "contact": "Contact", "dynamic_title": "Target Job Title" },
+  "2": "Markdown string evaluating Degree and Institution Relevance to the Extracted Industry.",
+  "3": "Markdown table mapping Actual Skills vs Required Skills (for the Extracted Industry). Mark missing as gaps.",
+  "4": "Markdown string calculating total years in the Extracted Industry and identifying Seniority.",
+  "5": "Markdown string benchmark of Salary Expectation based on Extracted Title and Location.",
+  "6": "Markdown string of Current City/State and Relocation/Remote preferences.",
+  "7": "Markdown string mapping 2-3 specific projects to skills (must match Extracted Industry context).",
+  "8": { "domain": number, "skills": number, "experience": number, "education": number, "certs": number, "support": number, "total_score": number },
+  "9": { "status": "SELECTED | WAITLISTED | REJECTED", "justification": "Logic based on Total Score." },
+  "10": ["q1", "q2", "q3", "q4", "q5"]
 }
+
+STRICT INSTRUCTION: Return ONLY valid JSON matching exactly the keys "1" through "10". Do not wrap in markdown tags.
 
 Resume Text:
 """
@@ -75,121 +40,79 @@ ${resumeText}
 """
 `.trim();
 
-/**
- * Helper to fetch with exponential backoff on 429 (Quota Exceeded)
- */
-const fetchWithRetry = async (
-    url: string,
-    options: any,
-    retries = 3,
-    delay = 15000
-): Promise<Response> => {
+const fetchWithRetry = async (url: string, options: any, retries = 3, delay = 15000): Promise<Response> => {
     const response = await fetch(url, options);
     if (response.status === 429 && retries > 0) {
-        console.warn(`Quota exceeded. Retrying in ${delay / 1000}s...`);
+        console.warn('Quota exceeded. Retrying in ' + (delay / 1000) + 's...');
         await new Promise((resolve) => setTimeout(resolve, delay));
         return fetchWithRetry(url, options, retries - 1, delay * 1.5);
     }
     return response;
 };
 
-/**
- * Sends resume text to Gemini and returns a parsed CandidateReport.
- */
-export const analyzeResumeWithGemini = async (
-    resumeText: string,
-    jobRole: string,
-    fileName: string
-): Promise<CandidateReport> => {
+export const analyzeResumeWithGemini = async (resumeText: string, jobRole: string, fileName: string): Promise<CandidateReport> => {
     const apiKey = import.meta.env.VITE_GEMINI_API_KEY;
-    if (!apiKey) {
-        throw new Error('Gemini API key not configured. Set VITE_GEMINI_API_KEY in your .env file.');
-    }
+    if (!apiKey) throw new Error('Gemini API key not configured. Set VITE_GEMINI_API_KEY in your .env file.');
 
-    const prompt = buildPrompt(resumeText, jobRole);
+    const prompt = buildPrompt(resumeText);
 
     const response = await fetchWithRetry(`${GEMINI_API_URL}?key=${apiKey}`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
             contents: [{ parts: [{ text: prompt }] }],
-            generationConfig: {
-                temperature: 0.2,
-                maxOutputTokens: 2048,
-            },
+            generationConfig: { temperature: 0.1, maxOutputTokens: 2048, responseMimeType: "application/json" },
         }),
     });
 
     if (!response.ok) {
         const errBody = await response.text().catch(() => '');
-        throw new Error(`Gemini API error ${response.status}: ${response.statusText}. ${errBody.slice(0, 200)}`);
+        throw new Error('API Request Failed: ' + errBody.slice(0, 100));
     }
 
     const data = await response.json();
-    const rawText: string = data?.candidates?.[0]?.content?.parts?.[0]?.text ?? '';
-
-    if (!rawText) {
-        throw new Error('Gemini returned an empty response. Please try again.');
-    }
-
-    const cleaned = rawText.replace(/```json\s*/gi, '').replace(/```\s*/gi, '').trim();
-
+    const rawText = data?.candidates?.[0]?.content?.parts?.[0]?.text ?? '{}';
     let parsed: any;
-    try {
-        parsed = JSON.parse(cleaned);
-    } catch {
-        const match = cleaned.match(/\{[\s\S]*\}/);
-        if (!match) {
-            throw new Error('Gemini did not return valid JSON. Please retry.');
-        }
-        try {
-            parsed = JSON.parse(match[0]);
-        } catch {
-            throw new Error('Could not parse Gemini response as JSON. Please retry.');
-        }
-    }
+    try { parsed = JSON.parse(rawText); } catch { parsed = {}; }
 
-    const clamp = (val: any, min: number, max: number): number =>
-        Math.min(max, Math.max(min, Number(val) || 0));
+    const evalData = parsed["8"] || {};
+    const totalScore = Math.min(100, Math.max(0, Number(evalData.total_score) || 0));
 
-    const evalData = parsed.mathematicalEvaluation || {};
-    
     const scoreBreakdown: CandidateScore = {
-        total: clamp(evalData.totalScore || 0, 0, 100),
-        domainRelevance: clamp(evalData.domain, 0, 35),
-        skillMatch: clamp(evalData.skills, 0, 25),
-        experienceMatch: clamp(evalData.experience, 0, 15),
-        educationMatch: clamp(evalData.education, 0, 10),
-        certifications: clamp(evalData.certs, 0, 10),
-        supportingSkills: clamp(evalData.support, 0, 5),
+        total: totalScore,
+        domainRelevance: evalData.domain || 0,
+        skillMatch: evalData.skills || 0,
+        experienceMatch: evalData.experience || 0,
+        educationMatch: evalData.education || 0,
+        certifications: evalData.certs || 0,
+        supportingSkills: evalData.support || 0,
     };
 
-    const totalScore = scoreBreakdown.total;
-    const statusMatch = parsed.suitabilityVerdict?.status || 'REJECTED';
-    const recommendation = statusMatch === 'HIRE' ? 'Highly Suitable' 
-        : statusMatch === 'WAITLIST' ? 'Moderately Suitable' 
+    const statusMatch = parsed["9"]?.status || 'REJECTED';
+    const recommendation = statusMatch === 'SELECTED' ? 'Highly Suitable' 
+        : statusMatch === 'WAITLISTED' ? 'Moderately Suitable' 
         : 'Not Suitable';
 
     const report: CandidateReport = {
         id: Math.random().toString(36).substr(2, 9),
         date: new Date().toISOString().split('T')[0],
-        candidateName: parsed.extractedName || fileName.replace(/\.pdf$/i, ''),
-        jobRole,
+        candidateName: parsed["1"]?.name || fileName.replace(/\.pdf$/i, ''),
+        jobRole: parsed["1"]?.dynamic_title || jobRole,
         score: totalScore,
         scoreBreakdown,
-        candidateDomain: String(parsed.basicInfo || '').slice(0, 100) || 'Unknown',
-        jobDomain: jobRole,
+        candidateDomain: parsed["1"]?.dynamic_industry || 'Unknown',
+        jobDomain: parsed["1"]?.dynamic_industry || jobRole,
         domainMatchStatus: totalScore > 75 ? 'Match' : 'Mismatch',
-        topSkills: Array.isArray(parsed.hardSkillsFound) ? parsed.hardSkillsFound : [],
-        missingCriticalSkills: Array.isArray(parsed.skillGaps) ? parsed.skillGaps : [],
+        topSkills: [],
+        missingCriticalSkills: [],
         strengths: [],
         weaknesses: [],
-        experienceEvaluation: parsed.chronologicalExperience || '',
-        educationAlignment: parsed.educationalBackground || '',
-        criticalGaps: Array.isArray(parsed.skillGaps) ? parsed.skillGaps : [],
-        roleSuitability: parsed.suitabilityVerdict?.justification || '',
+        experienceEvaluation: parsed["4"] || '',
+        educationAlignment: parsed["2"] || '',
+        criticalGaps: [],
+        roleSuitability: parsed["9"]?.justification || '',
         recommendation,
-        matchedSkills: Array.isArray(parsed.hardSkillsFound) ? parsed.hardSkillsFound : [],
+        matchedSkills: [],
         masterAnalysis: parsed
     };
 
