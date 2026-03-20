@@ -27,6 +27,7 @@ const Scanner: React.FC = () => {
     const [sidebarOpen, setSidebarOpen] = useState(false);
     const [selectedIndustry, setSelectedIndustry] = useState("");
     const [selectedRole, setSelectedRole] = useState("");
+    const [scanError, setScanError] = useState<string | null>(null);
 
     const isBasic = org?.plan === 'Basic';
 
@@ -74,10 +75,10 @@ const Scanner: React.FC = () => {
                 setScoreResult(report);
                 setCurrentReport(report);
             }, 800);
-        } catch (error) {
+        } catch (error: any) {
             clearInterval(interval);
             setIsAnalyzing(false);
-            alert("Failed to analyze resume.");
+            setScanError(error.message || "Failed to analyze resume.");
         }
     };
 
@@ -91,9 +92,9 @@ const Scanner: React.FC = () => {
             setIsAnalyzing(false);
             setScoreResult(report);
             setCurrentReport(report);
-        } catch (error) {
+        } catch (error: any) {
             setIsAnalyzing(false);
-            alert("Failed to reassess resume.");
+            setScanError(error.message || "Failed to reassess resume.");
         }
     };
 
@@ -333,6 +334,25 @@ const Scanner: React.FC = () => {
                     )}
                 </div>
             </div>
+
+            {scanError && (
+                <div className="fixed inset-0 flex items-center justify-center z-50 bg-black/50 backdrop-blur-sm">
+                    <motion.div
+                        initial={{ scale: 0.8, opacity: 0 }}
+                        animate={{ scale: 1, opacity: 1 }}
+                        className="bg-[#1a1a1a] border border-red-500/50 p-6 rounded-2xl shadow-2xl max-w-sm w-full mx-4"
+                    >
+                        <h3 className="text-lg font-bold text-red-400 mb-2">Analysis Failed</h3>
+                        <p className="text-gray-200 text-sm mb-6 leading-relaxed bg-black/20 p-3 rounded-lg border border-white/5">{scanError}</p>
+                        <button
+                            onClick={() => setScanError(null)}
+                            className="w-full py-2 px-4 bg-red-500/10 hover:bg-red-500/20 text-red-500 border border-red-500/20 rounded-lg text-sm font-bold transition-all"
+                        >
+                            Dismiss
+                        </button>
+                    </motion.div>
+                </div>
+            )}
 
             <ReportSidebar
                 isOpen={sidebarOpen}

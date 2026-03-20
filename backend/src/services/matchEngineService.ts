@@ -1,7 +1,40 @@
 import { determineDomain } from '../utils/domainFramework';
 import { CandidateReport } from '../models/memoryDb';
 
-export const generateReport = (filename: string, jobRole: string, isReassess: boolean = false): CandidateReport => {
+const calculateFinalScore = (extractedData: any): { total: number, breakdown: any } => {
+    // Strict 100-point weights: Domain(35), Skills(25), Experience(15), Education(10), Certs(10), Support(5)
+    
+    let domainScore = extractedData.isExactMatch ? 35 : 15;
+    
+    // Skills only score if they are linked to a specific 'work_experience' ID
+    let skillsScore = 0;
+    const hasLinkedSkills = extractedData.skills && extractedData.skills.some((s: any) => s.work_experience_id);
+    if (hasLinkedSkills) {
+        skillsScore = extractedData.isExactMatch ? 25 : 10;
+    }
+
+    let expScore = extractedData.isExactMatch ? 15 : 8;
+    let eduScore = 10;
+    let certsScore = extractedData.isExactMatch ? 10 : 2;
+    let supportScore = 5;
+
+    const total = domainScore + skillsScore + expScore + eduScore + certsScore + supportScore;
+
+    return {
+        total,
+        breakdown: {
+            total,
+            domainRelevance: domainScore,
+            skillMatch: skillsScore,
+            experienceMatch: expScore,
+            educationMatch: eduScore,
+            certifications: certsScore,
+            supportingSkills: supportScore
+        }
+    };
+};
+
+export const generateReport = (filename: string, jobRole: string, isReassess: boolean = false, rawText: string = ''): CandidateReport => {
     const jobDomainFramework = determineDomain(jobRole);
     const jobDomainName = jobDomainFramework ? jobDomainFramework.name : 'Unknown Domain';
 
@@ -18,26 +51,15 @@ export const generateReport = (filename: string, jobRole: string, isReassess: bo
     const isExactMatch = candidateDomainName === jobDomainName;
     const domainMatchStatus = isExactMatch ? 'Match' : 'Mismatch';
     
-    const variationScore = isReassess ? Math.floor(Math.random() * 5 - 2) : 0;
-    
-    let domainRelevance = isExactMatch ? 32 + variationScore : 10 + Math.floor(Math.random() * 5);
-    const skillMatch = isExactMatch ? 20 + Math.floor(Math.random() * 5) : 5 + Math.floor(Math.random() * 5); 
-    const experienceMatch = isExactMatch ? 12 + Math.floor(Math.random() * 3) : 8; 
-    const educationMatch = 8; 
-    const certifications = isExactMatch ? 8 : 2; 
-    const supportingSkills = 4; 
-
-    const baseScore = domainRelevance + skillMatch + experienceMatch + educationMatch + certifications + supportingSkills;
-
-    const scoreBreakdown = {
-        total: baseScore,
-        domainRelevance,
-        skillMatch,
-        experienceMatch,
-        educationMatch,
-        certifications,
-        supportingSkills
+    // Simulated JSON extraction containing work_experience_id mappings 
+    const extractedData = {
+        isExactMatch,
+        skills: [
+            { name: "Core Technique", work_experience_id: "exp_01" }
+        ]
     };
+
+    const { total: baseScore, breakdown: scoreBreakdown } = calculateFinalScore(extractedData);
 
     const matchedSkills = isExactMatch && jobDomainFramework 
         ? jobDomainFramework.requiredSkills.slice(0, 5) 
