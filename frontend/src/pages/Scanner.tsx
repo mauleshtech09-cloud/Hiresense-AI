@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
+import taxonomyData from '../data/taxonomy.json';
 import { motion } from 'framer-motion';
 import { Upload, File, Lock, Zap, Briefcase, MapPin, Search, CheckCircle } from 'lucide-react';
 import { useAuth } from '../context/AuthContext';
 import { useAppState } from '../context/AppStateContext';
 import type { CandidateReport, CandidateScore } from '../context/AppStateContext';
 import ReportSidebar from '../components/ReportSidebar';
-import { determineDomain } from '../utils/domainFramework';
+import { resumeService } from '../services/resumeService';
 
 // Simulate parsing and scoring
 const analysisSteps = [
@@ -24,7 +25,8 @@ const Scanner: React.FC = () => {
     const [analysisStep, setAnalysisStep] = useState(0);
     const [scoreResult, setScoreResult] = useState<CandidateReport | null>(null);
     const [sidebarOpen, setSidebarOpen] = useState(false);
-    const [jobRole, setJobRole] = useState("Software Engineer");
+    const [selectedIndustry, setSelectedIndustry] = useState("");
+    const [selectedRole, setSelectedRole] = useState("");
 
     const isBasic = org?.plan === 'Basic';
 
@@ -43,100 +45,7 @@ const Scanner: React.FC = () => {
         }
     };
 
-    const generateReport = (isReassess: boolean = false) => {
-        const jobDomainFramework = determineDomain(jobRole);
-        const jobDomainName = jobDomainFramework ? jobDomainFramework.name : 'Unknown Domain';
-
-        // Simulate resume content based on filename to prove mismatch logic
-        const filename = file ? file.name.toLowerCase() : '';
-        let candidateDomainName = 'Software Development'; // Default
-        if (filename.includes('cyber') || filename.includes('soc') || filename.includes('security')) {
-            candidateDomainName = 'Cybersecurity';
-        } else if (filename.includes('design') || filename.includes('ui') || filename.includes('ux')) {
-            candidateDomainName = 'UI / UX Design';
-        } else if (filename.includes('backend') || filename.includes('dev')) {
-            candidateDomainName = 'Software Development';
-        }
-
-        const isExactMatch = candidateDomainName === jobDomainName;
-
-        const domainMatchStatus = isExactMatch ? 'Match' : 'Mismatch';
-        
-        const variationScore = isReassess ? Math.floor(Math.random() * 5 - 2) : 0;
-        
-        let baseScore = 0;
-        let domainRelevance = 0;
-        
-        if (isExactMatch) {
-            domainRelevance = 32 + variationScore; // ~32 out of 35
-        } else {
-            domainRelevance = 10 + Math.floor(Math.random() * 5); // Severe penalty
-        }
-
-        const skillMatch = isExactMatch ? 20 + Math.floor(Math.random() * 5) : 5 + Math.floor(Math.random() * 5); // out of 25
-        const experienceMatch = isExactMatch ? 12 + Math.floor(Math.random() * 3) : 8; // out of 15
-        const educationMatch = 8; // out of 10
-        const certifications = isExactMatch ? 8 : 2; // out of 10
-        const supportingSkills = 4; // out of 5
-
-        baseScore = domainRelevance + skillMatch + experienceMatch + educationMatch + certifications + supportingSkills;
-
-        const scoreBreakdown: CandidateScore = {
-            total: baseScore,
-            domainRelevance,
-            skillMatch,
-            experienceMatch,
-            educationMatch,
-            certifications,
-            supportingSkills
-        };
-
-        const matchedSkills = isExactMatch && jobDomainFramework 
-            ? jobDomainFramework.requiredSkills.slice(0, 5) 
-            : ['Basic Communication', 'MS Office'];
-            
-        const missingCriticalSkills = isExactMatch && jobDomainFramework
-            ? jobDomainFramework.requiredSkills.slice(5, 7)
-            : jobDomainFramework ? jobDomainFramework.requiredSkills.slice(0, 4) : ['Core Domain Skills'];
-
-        const criticalGaps = isExactMatch 
-            ? ['Requires deeper architectural knowledge for senior tasks.']
-            : ['Fundamental domain mismatch.', 'Lack of core technical foundation for this role.'];
-
-        const report: CandidateReport = {
-            id: Math.random().toString(36).substr(2, 9),
-            candidateName: file ? file.name.replace('.pdf', '') : 'John Doe',
-            date: new Date().toISOString().split('T')[0],
-            jobRole: jobRole,
-            score: baseScore,
-            scoreBreakdown,
-            
-            topSkills: matchedSkills,
-            strengths: isExactMatch ? ['Strong domain alignment', 'Good foundational skills'] : ['Translatable soft skills'],
-            weaknesses: criticalGaps,
-            
-            candidateDomain: candidateDomainName,
-            jobDomain: jobDomainName,
-            domainMatchStatus,
-            matchedSkills,
-            missingCriticalSkills,
-            experienceEvaluation: isExactMatch 
-                ? 'Candidate has relevant years of experience aligning directly with core job requirements.'
-                : 'Experience is heavily centered in a contrasting domain, making direct contribution difficult.',
-            educationAlignment: 'Degree holds partial relevance to technical requirements.',
-            criticalGaps,
-
-            roleSuitability: isExactMatch 
-                ? `Excellent candidate for ${jobRole}. Strong ${jobDomainName} ecosystem skills.`
-                : `Candidate demonstrates strong knowledge in ${candidateDomainName}, but job requires ${jobDomainName}. Mismatch detected.`,
-            
-            recommendation: baseScore > 75 ? 'Highly Suitable' : baseScore > 60 ? 'Moderately Suitable' : baseScore > 40 ? 'Low Suitability' : 'Not Suitable'
-        };
-
-        return report;
-    };
-
-    const handleAnalyze = () => {
+    const handleAnalyze = async () => {
         if (!file) return;
         if (!incrementScan()) {
             alert("Daily scan limit reached for your plan!");
@@ -147,33 +56,45 @@ const Scanner: React.FC = () => {
         setScoreResult(null);
         setAnalysisStep(0);
 
-        // Simulate steps
+        // Simulate steps visually while awaiting
         let step = 0;
         const interval = setInterval(() => {
-            step++;
-            setAnalysisStep(step);
-            if (step >= analysisSteps.length) {
-                clearInterval(interval);
-                setTimeout(() => {
-                    setIsAnalyzing(false);
-                    const report = generateReport();
-                    setScoreResult(report);
-                    setCurrentReport(report);
-                }, 800);
+            if (step < analysisSteps.length - 1) {
+                step++;
+                setAnalysisStep(step);
             }
-        }, 1200);
+        }, 800);
+
+        try {
+            const report = await resumeService.analyze(file, selectedRole, false);
+            clearInterval(interval);
+            setAnalysisStep(analysisSteps.length);
+            setTimeout(() => {
+                setIsAnalyzing(false);
+                setScoreResult(report);
+                setCurrentReport(report);
+            }, 800);
+        } catch (error) {
+            clearInterval(interval);
+            setIsAnalyzing(false);
+            alert("Failed to analyze resume.");
+        }
     };
 
-    const handleReassess = () => {
+    const handleReassess = async () => {
+        if (!file) return;
         setScoreResult(null);
         setIsAnalyzing(true);
         setAnalysisStep(1); // skip initial parse step in UI
-        setTimeout(() => {
+        try {
+            const report = await resumeService.analyze(file, selectedRole, true);
             setIsAnalyzing(false);
-            const report = generateReport(true);
             setScoreResult(report);
             setCurrentReport(report);
-        }, 2000);
+        } catch (error) {
+            setIsAnalyzing(false);
+            alert("Failed to reassess resume.");
+        }
     };
 
     return (
@@ -224,47 +145,93 @@ const Scanner: React.FC = () => {
                             Job Filters
                         </h2>
                         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                            <div>
-                                <label className="block text-xs font-semibold text-gray-500 uppercase tracking-wider mb-1">Job Role</label>
+                            <div className="sm:col-span-2">
+                                <label className="block text-xs font-semibold text-gray-500 uppercase tracking-wider mb-1">Industry</label>
                                 <div className="relative">
                                     <Briefcase className="absolute left-3 top-2.5 h-4 w-4 text-gray-400" />
-                                    <input type="text" className="w-full text-sm border-gray-300 border rounded-lg pl-9 p-2 focus:ring-2 focus:ring-indigo-500 focus:border-transparent outline-none" placeholder="e.g. Frontend Engineer" value={jobRole} onChange={(e) => setJobRole(e.target.value)} />
+                                    <select
+                                        className="w-full text-sm border-gray-300 border rounded-lg pl-9 p-2 focus:ring-2 focus:ring-indigo-500 appearance-none bg-white outline-none cursor-pointer"
+                                        value={selectedIndustry}
+                                        onChange={(e) => {
+                                            setSelectedIndustry(e.target.value);
+                                            setSelectedRole('');
+                                        }}
+                                    >
+                                        <option value="" disabled>Select Industry</option>
+                                        {taxonomyData.industries.map(ind => (
+                                            <option key={ind.id} value={ind.id}>{ind.name}</option>
+                                        ))}
+                                    </select>
                                 </div>
                             </div>
-                            <div>
-                                <label className="block text-xs font-semibold text-gray-500 uppercase tracking-wider mb-1">Location</label>
-                                <div className="relative">
-                                    <MapPin className="absolute left-3 top-2.5 h-4 w-4 text-gray-400" />
-                                    <input type="text" className="w-full text-sm border-gray-300 border rounded-lg pl-9 p-2 focus:ring-2 focus:ring-indigo-500 outline-none" placeholder="City, Country" />
+                            
+                            {selectedIndustry && (
+                                <div className="sm:col-span-2">
+                                    <label className="block text-xs font-semibold text-gray-500 uppercase tracking-wider mb-1">Job Role</label>
+                                    <div className="relative">
+                                        <Briefcase className="absolute left-3 top-2.5 h-4 w-4 text-gray-400" />
+                                        <select
+                                            className="w-full text-sm border-gray-300 border rounded-lg pl-9 p-2 focus:ring-2 focus:ring-indigo-500 appearance-none bg-white outline-none cursor-pointer"
+                                            value={selectedRole}
+                                            onChange={(e) => setSelectedRole(e.target.value)}
+                                        >
+                                            <option value="" disabled>Select Role</option>
+                                            {taxonomyData.industries.find(i => i.id === selectedIndustry)?.roles.map(r => (
+                                                <option key={r.title} value={r.title}>{r.title}</option>
+                                            ))}
+                                        </select>
+                                    </div>
                                 </div>
-                            </div>
+                            )}
 
-                            {/* Locked Filters for Basic */}
-                            <div className="sm:col-span-2 mt-2 pt-4 border-t border-gray-100">
-                                <h3 className="text-sm font-semibold text-gray-700 mb-3 flex items-center">
-                                    Advanced Filters
-                                    {isBasic && <span className="ml-2 text-xs font-normal text-amber-600 bg-amber-50 px-2 py-0.5 rounded flex items-center"><Lock className="w-3 h-3 mr-1" /> Pro required</span>}
-                                </h3>
-                                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                                    {['Skills Requirement', 'Salary Range', 'Experience Level', 'Education', 'Industry'].map((filter, i) => (
-                                        <div key={i} className="relative">
-                                            <label className="block text-xs font-semibold text-gray-500 uppercase tracking-wider mb-1">{filter}</label>
-                                            <input
-                                                type="text"
-                                                disabled={isBasic}
-                                                className={`w-full text-sm border border-gray-300 rounded-lg p-2 ${isBasic ? 'bg-gray-100 text-gray-400 cursor-not-allowed' : 'focus:ring-2 focus:ring-indigo-500 outline-none'}`}
-                                                placeholder="Any"
-                                            />
-                                            {isBasic && <Lock className="absolute right-3 top-7 w-4 h-4 text-gray-400" />}
+                            {selectedRole && (
+                                <>
+                                    <div className="sm:col-span-2">
+                                        <label className="block text-xs font-semibold text-gray-500 uppercase tracking-wider mb-1">Relevant Skills</label>
+                                        <div className="flex flex-wrap gap-2 mt-1 mb-2">
+                                            {taxonomyData.industries.find(i => i.id === selectedIndustry)?.roles.find(r => r.title === selectedRole)?.skills.map(skill => (
+                                                <span key={skill} className="px-3 py-1 bg-indigo-50 text-indigo-700 text-xs font-bold rounded-full border border-indigo-100">
+                                                    {skill}
+                                                </span>
+                                            ))}
                                         </div>
-                                    ))}
-                                </div>
-                            </div>
+                                    </div>
+                                    <div className="sm:col-span-2">
+                                        <label className="block text-xs font-semibold text-gray-500 uppercase tracking-wider mb-1">Location</label>
+                                        <div className="relative">
+                                            <MapPin className="absolute left-3 top-2.5 h-4 w-4 text-gray-400" />
+                                            <input type="text" className="w-full text-sm border-gray-300 border rounded-lg pl-9 p-2 focus:ring-2 focus:ring-indigo-500 outline-none" placeholder="City, Country" />
+                                        </div>
+                                    </div>
+
+                                    {/* Locked Filters for Basic */}
+                                    <div className="sm:col-span-2 mt-2 pt-4 border-t border-gray-100">
+                                        <h3 className="text-sm font-semibold text-gray-700 mb-3 flex items-center">
+                                            Advanced Filters
+                                            {isBasic && <span className="ml-2 text-xs font-normal text-amber-600 bg-amber-50 px-2 py-0.5 rounded flex items-center"><Lock className="w-3 h-3 mr-1" /> Pro required</span>}
+                                        </h3>
+                                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                            {['Salary Range', 'Experience Level', 'Education'].map((filter, i) => (
+                                                <div key={i} className="relative">
+                                                    <label className="block text-xs font-semibold text-gray-500 uppercase tracking-wider mb-1">{filter}</label>
+                                                    <input
+                                                        type="text"
+                                                        disabled={isBasic}
+                                                        className={`w-full text-sm border border-gray-300 rounded-lg p-2 ${isBasic ? 'bg-gray-100 text-gray-400 cursor-not-allowed' : 'focus:ring-2 focus:ring-indigo-500 outline-none'}`}
+                                                        placeholder="Any"
+                                                    />
+                                                    {isBasic && <Lock className="absolute right-3 top-7 w-4 h-4 text-gray-400" />}
+                                                </div>
+                                            ))}
+                                        </div>
+                                    </div>
+                                </>
+                            )}
                         </div>
 
                         <button
                             onClick={handleAnalyze}
-                            disabled={!file || isAnalyzing}
+                            disabled={!file || !selectedIndustry || !selectedRole || isAnalyzing}
                             className="mt-6 w-full flex justify-center items-center py-3 px-4 border border-transparent rounded-xl shadow-md text-sm font-bold text-white bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700 disabled:opacity-50 transition-all"
                         >
                             {isAnalyzing ? 'Processing...' : 'Analyze Resume'}

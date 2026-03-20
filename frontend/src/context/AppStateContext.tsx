@@ -1,4 +1,5 @@
 import React, { createContext, useContext, useState, useEffect } from 'react';
+import { resumeService } from '../services/resumeService';
 
 export interface CandidateScore {
     total: number;
@@ -56,10 +57,21 @@ export const AppStateProvider: React.FC<{ children: React.ReactNode }> = ({ chil
     const [currentReport, setCurrentReport] = useState<CandidateReport | null>(null);
 
     useEffect(() => {
-        localStorage.setItem('hireSense_history', JSON.stringify(history));
-    }, [history]);
+        const fetchHistory = async () => {
+            try {
+                const data = await resumeService.getHistory();
+                if (data && Array.isArray(data)) {
+                    setHistory(data);
+                }
+            } catch (e) {
+                console.error("Failed to load history from backend", e);
+            }
+        };
+        fetchHistory();
+    }, []);
 
     const addReportToHistory = (report: CandidateReport) => {
+        resumeService.saveReport(report).catch(e => console.error(e));
         setHistory(prev => {
             // Avoid duplicates
             if (prev.find(r => r.id === report.id)) return prev;

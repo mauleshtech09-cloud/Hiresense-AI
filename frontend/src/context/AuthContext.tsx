@@ -1,4 +1,5 @@
-import React, { createContext, useContext, useState } from 'react';
+import React, { createContext, useContext, useState, useEffect } from 'react';
+import { authService } from '../services/authService';
 
 export interface Organization {
     username: string;
@@ -24,7 +25,7 @@ const PRE_REGISTERED_ORGS: Organization[] = [
 
 interface AuthContextType {
     org: Organization | null;
-    login: (username: string, password: string) => boolean;
+    login: (username: string, password: string) => Promise<boolean>;
     logout: () => void;
     updateOrg: (updates: Partial<Organization>) => void;
     incrementScan: () => boolean;
@@ -36,7 +37,7 @@ const AuthContext = createContext<AuthContextType | undefined>(undefined);
 export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
     const [org, setOrg] = useState<Organization | null>(null);
 
-    const login = (username: string, password: string) => {
+    const login = async (username: string, password: string) => {
         // Hardcoded passwords per PRD
         const passwords: Record<string, string> = {
             org1: '123456',
@@ -48,14 +49,23 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
         if (passwords[username] === password) {
             const foundInstance = PRE_REGISTERED_ORGS.find(o => o.username === username);
             if (foundInstance) {
-                setOrg(foundInstance);
-                return true;
+                try {
+                    const res = await authService.login(foundInstance.email || username + '@hiresense.ai');
+                    localStorage.setItem('hiresense_token', res.token);
+                    setOrg(foundInstance);
+                    return true;
+                } catch (e) {
+                    console.error("Login failed", e);
+                }
             }
         }
         return false;
     };
 
-    const logout = () => setOrg(null);
+    const logout = () => {
+        localStorage.removeItem('hiresense_token');
+        setOrg(null);
+    };
 
     const updateOrg = (updates: Partial<Organization>) => {
         setOrg(prev => prev ? { ...prev, ...updates } : null);

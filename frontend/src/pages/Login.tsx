@@ -12,9 +12,10 @@ const Login: React.FC = () => {
     const { login } = useAuth();
     const navigate = useNavigate();
 
-    const handleLogin = (e: React.FormEvent) => {
+    const handleLogin = async (e: React.FormEvent) => {
         e.preventDefault();
-        if (login(username, password)) {
+        const success = await login(username, password);
+        if (success) {
             navigate('/');
         } else {
             setError('Invalid username or password. Please try again.');

@@ -1,0 +1,10 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const express_1 = require("express");
+const profileController_1 = require("../controllers/profileController");
+const authMiddleware_1 = require("../middleware/authMiddleware");
+const router = (0, express_1.Router)();
+router.get('/', authMiddleware_1.requireAuth, profileController_1.getProfile);
+router.post('/update', authMiddleware_1.requireAuth, profileController_1.updateProfile);
+exports.default = router;
+//# sourceMappingURL=profileRoutes.js.map
